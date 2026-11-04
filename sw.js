@@ -1,5 +1,5 @@
-const CACHE = 'gym-bro-transformation-clean-v33';
-const FILES = ['./', './index.html', './app.css', './manifest.webmanifest','./icons/icon-180.png','./icons/icon-192.png','./icons/icon-512.png','./icons/gb-logo.svg'];
+const CACHE = 'gym-bro-transformation-refined-v34';
+const FILES = ['./', './index.html', './app.css', './layout.css', './data.js', './manifest.webmanifest','./icons/icon-180.png','./icons/icon-192.png','./icons/icon-512.png','./icons/gb-logo.svg'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(FILES)).then(() => self.skipWaiting()));
 });

@@ -1,0 +1,902 @@
+/* Existing responsive component layouts, consolidated from the original inline sheets. */
+
+:root{color-scheme:dark;--bg:#121819;--card:#121819;--card2:#191e20;--line:#43524d;--text:#f2f6fb;--muted:#a9b8b6;--accent:#92dec3;--blue:#edf4f1;--warn:#ffd28a}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.45 system-ui,-apple-system,sans-serif}main{max-width:850px;margin:auto;padding:22px 16px 100px}h1{font-size:27px;line-height:1.14;margin:0 0 8px}h2{font-size:19px;margin:0 0 12px}p{margin:8px 0;color:var(--muted)}.sub{font-size:13px}.muted{color:var(--muted)}.top{display:flex;align-items:start;justify-content:space-between;gap:12px}.pill{font-size:12px;background:#263033;border:1px solid #92dec3;padding:6px 10px;border-radius:30px;color:#edf4f1;white-space:nowrap}.panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:17px;margin:14px 0}button,.filebtn{font:inherit;background:#263033;border:1px solid #43524d;color:var(--text);padding:10px 13px;border-radius:10px;cursor:pointer;display:inline-block}button.primary{background:#92dec3;color:white;border-color:#92dec3;font-weight:650}button:disabled{opacity:.45;cursor:not-allowed}button.secondary{background:transparent}button.danger{border-color:#895058;background:#45292f}.row{display:flex;gap:9px;align-items:center;flex-wrap:wrap}.spread{justify-content:space-between}.grow{flex:1}.progress{height:9px;background:#263033;border-radius:99px;overflow:hidden;margin:12px 0}.fill{height:100%;width:0;background:var(--accent);transition:width .2s}.ex{border-top:1px solid var(--line);padding-top:15px;margin-top:15px}.ex:first-child{border:0;padding:0;margin:0}.exhead{display:flex;gap:10px;justify-content:space-between}.exhead h3{font-size:16px;margin:0}.hint{background:#191e20;border-left:3px solid var(--accent);padding:10px 12px;border-radius:8px;font-size:13px;margin:11px 0}.cols{display:grid;grid-template-columns:30px minmax(65px,1fr) minmax(65px,1fr) 48px;gap:7px;align-items:center}.cols label{font-size:12px;color:var(--muted)}input[type=number],input[type=date]{width:100%;padding:11px 8px;color:var(--text);background:#121819;border:1px solid #43524d;border-radius:9px;font:inherit;min-width:0}input[type=checkbox]{height:23px;width:23px;accent-color:#92dec3;cursor:pointer}.setrow{margin-top:7px}.setrow.complete{opacity:.72}.small{font-size:12px}.stat{font-size:23px;font-weight:750}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.tile{background:var(--card2);padding:10px;border-radius:11px}.tile span{display:block;font-size:11px;color:var(--muted)}.history{border-top:1px solid var(--line);padding:10px 0}.history:first-child{border:0}.right{text-align:right}.bar{position:sticky;bottom:0;background:rgba(16,21,29,.95);border-top:1px solid var(--line);padding:12px 16px calc(12px + env(safe-area-inset-bottom));margin:0 -16px -100px;backdrop-filter:blur(8px)}.bar>div{max-width:850px;margin:auto;display:flex;gap:8px;justify-content:space-between}.warning{color:var(--warn)}.tag{font-size:12px;color:var(--blue)}#toast{position:fixed;left:50%;bottom:95px;transform:translateX(-50%);background:#43524d;color:white;border-radius:10px;padding:11px 14px;display:none;max-width:90vw}.hidden{display:none!important}@media(max-width:500px){.grid{grid-template-columns:repeat(3,1fr)}.stat{font-size:18px}main{padding-top:18px}.panel{padding:14px}.exhead{display:block}.exhead .right{text-align:left;margin-top:5px}}@media print{.bar,.actions,.backup{display:none}body{background:white;color:black}.panel{background:white;color:black}}
+.plan-table{width:100%;border-collapse:collapse;font-size:13px}.plan-table th,.plan-table td{padding:11px 7px;text-align:left;border-bottom:1px solid var(--line)}.plan-table th{color:var(--muted);font-weight:500}.plan-table td:first-child{font-weight:650}.plan-table tr:last-child td{border-bottom:0}.step{padding:11px 0;border-bottom:1px solid var(--line)}.step:last-child{border:0}.step strong{color:var(--text)}.plan-nav{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.plan-nav a{color:var(--text);background:var(--card2);padding:9px 12px;border-radius:9px;text-decoration:none;font-size:13px}.section-title{color:var(--accent);font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;margin:0 0 6px}html{scroll-behavior:smooth}@media(max-width:500px){.plan-table{font-size:12px}.plan-table th,.plan-table td{padding:9px 4px}}
+
+/* Mobile-first fit and dashboard polish */
+html{scroll-padding-top:12px}body{overflow-x:hidden;background:radial-gradient(ellipse at 50% -15%,#263033 0%,#121819 48%);}
+main{width:100%;max-width:850px;overflow-wrap:anywhere} .top{align-items:center}.top h1{font-size:clamp(25px,5vw,36px);letter-spacing:-.04em;line-height:1.07}.pill{white-space:normal;text-align:center;max-width:140px;font-size:11px}.panel{box-shadow:0 8px 24px #00000014}.plan-nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}.plan-nav a{text-align:center;padding:10px 3px;font-size:12px}.cols{grid-template-columns:24px minmax(0,1fr) minmax(0,1fr) 44px;gap:7px}.cols input{font-size:16px;min-width:0}.cols label{font-size:11px;overflow-wrap:normal}.bar{z-index:3}.bar>div{min-width:0}.bar button{min-width:0;white-space:normal;flex:1;font-size:13px;padding:11px 8px}.bar button.primary{flex:1.35}.metrics{margin:14px 0}.metrics .tile{min-width:0}.metrics .stat{font-size:clamp(15px,3.5vw,24px);overflow-wrap:normal}.chart-header{display:flex;justify-content:space-between;align-items:end;gap:12px;flex-wrap:wrap;margin-top:26px}.chart-header h3{margin:0;font-size:16px}.selector{display:grid;gap:5px;min-width:190px;flex:1;max-width:310px}select{width:100%;min-width:0;background:#121819;color:var(--text);border:1px solid #43524d;border-radius:10px;padding:11px;font:inherit}.chart-holder{width:100%;overflow:hidden;margin:15px auto 4px}.chart-holder svg{display:block;width:100%;height:auto;min-height:160px;max-height:340px}.chart-empty{padding:35px 10px;text-align:center;border:1px dashed var(--line);border-radius:12px;color:var(--muted);margin-top:14px}.week-bars{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));align-items:end;gap:6px;height:128px;margin:14px 0 5px}.week-bar{min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:4px;height:100%}.week-bar .tower{min-height:5px;width:100%;max-width:40px;background:#43524d;border-radius:6px 6px 3px 3px}.week-bar .tower.hit{background:var(--accent)}.week-bar small{font-size:10px;color:var(--muted);white-space:nowrap}.week-bar b{font-size:11px}.backup .row{align-items:stretch}.backup .row>*{flex:1;text-align:center}.plan-table{table-layout:auto}.plan-table td:nth-child(2),.plan-table td:nth-child(3){white-space:nowrap}.stat{line-height:1.2}.exhead{min-width:0}
+@media(max-width:520px){main{padding-left:12px;padding-right:12px}.top{align-items:flex-start}.top .pill{max-width:105px}.panel{padding:13px;border-radius:13px}.plan-table{font-size:11px}.plan-table th,.plan-table td{padding:9px 3px}.plan-table td:first-child{max-width:140px}.grid{gap:6px}.tile{padding:9px 6px}.tile span{font-size:10px}.bar{margin-left:-12px;margin-right:-12px}.chart-header{display:block}.selector{margin-top:10px;max-width:none}.exhead{display:block}.week-bars{gap:4px}}
+@media(max-width:365px){.top .pill{display:none}.plan-nav a{font-size:10px}.cols{grid-template-columns:20px minmax(0,1fr) minmax(0,1fr) 37px;gap:4px}.cols input{padding:9px 3px}.cols label{font-size:10px}.plan-table{font-size:10px}}
+
+
+/* Premium responsive refinement — presentation only; workout data schema unchanged. */
+:root{--bg:#121819;--card:#121819;--card2:#191e20;--line:#43524d;--text:#f5f8fc;--muted:#a9b8b6;--accent:#92dec3}
+html{scroll-padding-top:24px;-webkit-text-size-adjust:100%}
+body{font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:-.008em;background:radial-gradient(ellipse 75% 440px at 50% -140px,#43524d 0%,transparent 100%),var(--bg)}
+main{max-width:880px;padding:28px 18px 120px;overflow-wrap:normal}
+h1,h2,h3{letter-spacing:-.03em}h1{font-weight:800}h2{line-height:1.25}p{line-height:1.6}
+.top{align-items:flex-start;padding:5px 2px 2px}.top>div{min-width:0;flex:1}.top h1{font-size:clamp(27px,5vw,38px);max-width:580px}.top p{margin-top:10px}
+.pill{flex:none;max-width:160px;line-height:1.35;padding:8px 11px;border-radius:999px}
+.panel{border-radius:20px;padding:23px;margin:18px 0;background:linear-gradient(155deg,#191e20,#121819 65%);box-shadow:0 10px 38px #0002}
+.plan-nav{gap:9px;margin:21px 0}.plan-nav a{display:flex;align-items:center;justify-content:center;min-height:45px;padding:10px 8px;border:1px solid #43524d;border-radius:12px;font-size:13px;font-weight:600;line-height:1.3;transition:background .15s,border .15s}.plan-nav a:hover{background:#43524d;border-color:var(--accent)}
+button,.filebtn,input,select{font:inherit}button,.filebtn{transition:background .15s,border-color .15s,transform .15s;min-height:42px;font-weight:600}button:active{transform:scale(.99)}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.grid{gap:12px}.tile{padding:15px 13px;min-width:0;border:1px solid #43524d;border-radius:13px}.tile .stat{font-variant-numeric:tabular-nums;font-size:clamp(18px,3.8vw,26px);overflow-wrap:anywhere}.tile span{margin-top:7px;font-size:12px;line-height:1.4}
+.plan-table{width:100%;table-layout:fixed;font-size:13px}.plan-table th,.plan-table td{padding:13px 9px;vertical-align:middle;line-height:1.4}.plan-table th:first-child{width:49%}.plan-table th:nth-child(2){width:30%}.plan-table th:nth-child(3){width:21%}.plan-table td:first-child{overflow-wrap:break-word}.plan-table td:nth-child(2),.plan-table td:nth-child(3){white-space:normal;font-variant-numeric:tabular-nums}
+.ex{padding-top:22px;margin-top:23px}.exhead{display:flex;align-items:baseline;gap:12px}.exhead h3{font-size:17px;line-height:1.35;flex:1;min-width:0}.exhead .right{flex:none;max-width:42%;font-size:12px;line-height:1.45}
+.cols{grid-template-columns:38px minmax(0,1fr) minmax(0,1fr) 54px;gap:10px}.cols label{font-size:12px;line-height:1.3;overflow-wrap:normal}.cols label:last-child{text-align:center}.cols.setrow{padding:4px 0}.cols.setrow>span{font-weight:600;color:var(--muted)}.cols .right{display:flex;justify-content:center}
+input[type=number],input[type=date],select{min-width:0;width:100%;min-height:46px;padding:11px 12px;border:1px solid #43524d;border-radius:11px;background:#121819;font-size:16px;font-variant-numeric:tabular-nums;outline-offset:1px}
+input[type=number]::placeholder{color:#a9b8b6;opacity:1}input[type=checkbox]{height:23px;width:23px;flex-shrink:0}
+.hint{padding:13px 14px;line-height:1.55;border-radius:10px}.row{min-width:0}.row>*{max-width:100%}
+#increments{gap:12px}#increments label{display:inline-flex;align-items:center;justify-content:space-between;gap:8px;background:var(--card2);border-radius:10px;padding:8px 10px;min-width:0;flex:1 1 240px}#increments input[type=number]{flex:none;max-width:80px!important;min-height:38px;padding:7px 9px}
+.chart-header{align-items:center}.chart-holder{margin-top:17px}.chart-holder svg{min-height:0;max-height:320px}.week-bars{margin:21px 0 8px}.week-bar{min-width:0}.week-bar .tower{min-width:7px}.week-bar small{font-size:10px}
+.bar{position:sticky;z-index:10;bottom:0;margin:0 -18px -120px;padding:12px 18px calc(14px + env(safe-area-inset-bottom));background:#121819f2;border-top:1px solid #43524d;box-shadow:0 -10px 30px #0003}.bar>div{gap:10px}.bar button{flex:1;min-height:49px;padding:12px 10px;line-height:1.25}.bar button.primary{flex:1.5}
+@media(max-width:580px){main{padding:19px 12px 120px}.panel{padding:17px 15px;border-radius:17px;margin:15px 0}.top{display:block}.top h1{font-size:30px}.top .pill{display:inline-block;max-width:none;margin-top:7px}.plan-nav{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:16px 0}.plan-nav a{min-height:42px;font-size:12px}.grid{gap:8px}.tile{padding:12px 9px}.tile .stat{font-size:clamp(15px,4.5vw,22px)}.tile span{font-size:10px}.plan-table{font-size:12px}.plan-table th,.plan-table td{padding:11px 6px}.plan-table th:first-child{width:47%}.plan-table th:nth-child(2){width:30%}.plan-table th:nth-child(3){width:23%}.exhead{display:block}.exhead .right{max-width:none;text-align:left;margin-top:5px}.cols{grid-template-columns:28px minmax(0,1fr) minmax(0,1fr) 43px;gap:7px}.cols label{font-size:11px}.cols input[type=number]{padding:10px 8px}.bar{margin-left:-12px;margin-right:-12px;padding-left:12px;padding-right:12px}.bar button{font-size:13px}.chart-header{display:block}.selector{margin-top:12px;max-width:none}.week-bars{gap:5px}}
+@media(max-width:360px){.panel{padding:14px 11px}.plan-table{font-size:11px}.plan-table th,.plan-table td{padding:10px 4px}.cols{grid-template-columns:22px minmax(0,1fr) minmax(0,1fr) 38px;gap:5px}.cols input[type=number]{padding:9px 5px;font-size:16px}.cols label{font-size:10px}.tile{padding:10px 6px}.bar button{padding:10px 6px;font-size:12px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+
+
+/* Mobile-safe workout date control */
+#workoutLog .row.spread{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,190px);align-items:center;gap:12px}
+#workoutLog #sessionHeading{min-width:0;margin:0;overflow-wrap:break-word}
+#workoutLog label:has(#sessionDate){display:flex;flex-direction:column;gap:5px;min-width:0;width:100%;max-width:190px}
+#sessionDate{display:block;box-sizing:border-box;width:100%;max-width:100%;min-width:0;min-height:44px;padding:9px 7px;font-size:15px;-webkit-appearance:none;appearance:none}
+@media(max-width:560px){#workoutLog .row.spread{grid-template-columns:minmax(0,1fr);gap:10px}#workoutLog label:has(#sessionDate){max-width:100%;width:100%}#sessionDate{width:100%;max-width:100%;font-size:16px}}
+
+/* v5 mobile refinements */
+html{scroll-padding-top:18px}body{overflow-x:hidden}main,.panel,.ex,.cols,.tile,.top{min-width:0;max-width:100%}input,button,select{max-width:100%}.cols{grid-template-columns:28px minmax(0,1fr) minmax(0,1fr) 42px}.cols input{font-size:16px;padding:10px 5px}.row{min-width:0}.tile{overflow-wrap:anywhere}.quick-row{display:flex;flex-wrap:wrap;gap:7px;margin:8px 0}.quick-row button{font-size:12px;padding:7px 10px}.previous-set{font-size:12px;color:var(--blue);margin-top:8px}.calendar-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px}.calendar-day{min-width:0;text-align:center;border:1px solid var(--line);border-radius:8px;padding:7px 2px;font-size:12px;background:var(--card2)}.calendar-day.hit{background:#43524d;border-color:#92dec3}.calendar-day.outside{opacity:.35}.achievement-grid,.review-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr));gap:9px}.achievement,.review{border:1px solid var(--line);background:var(--card2);padding:12px;border-radius:12px}.achievement.locked{opacity:.48}.timer-readout{font-size:28px;font-variant-numeric:tabular-nums}.history-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}.history-editor{display:grid;grid-template-columns:50px minmax(0,1fr) minmax(0,1fr);gap:7px;align-items:center;margin:7px 0}.history-editor input{min-width:0}.chart-holder svg{width:100%;height:auto}.bar{z-index:9}.bar>div>button{min-width:0;flex:1;padding:10px 8px}#sessionDate{width:min(100%,210px)}@media(max-width:420px){.panel{padding:12px}.grid{gap:6px}.tile{padding:8px}.cols{gap:5px}.bar>div{gap:6px}.bar>div>button{font-size:12px}.stat{font-size:17px}}
+
+/* Violet & obsidian identity — aesthetic only, no workout logic modified */
+:root{--bg:#121819;--card:#121819;--card2:#191e20;--line:#43524d;--text:#edf4f1;--muted:#a9b8b6;--accent:#92dec3;--blue:#edf4f1;--warn:#ffd28a}
+body{background:radial-gradient(ellipse 80% 420px at 50% -125px,#43524d 0%,transparent 100%),#121819}
+.panel{background:linear-gradient(155deg,#191e20 0%,#121819 76%);border-color:#43524d}
+.pill{background:#263033;border-color:#92dec3;color:#edf4f1}
+button.primary{background:linear-gradient(135deg,#92dec3,#92dec3);border-color:#92dec3;color:#fff}
+button:not(.primary):not(.danger),.filebtn{background:#263033;border-color:#43524d}
+button.secondary{background:transparent!important}
+input[type=checkbox]{accent-color:#92dec3}
+input[type=number],input[type=date],select{background:#121819;border-color:#43524d;color:#edf4f1}
+.hint{background:#191e20;border-left-color:#92dec3}
+.bar{background:rgba(12,7,18,.96)}
+#toast{background:#43524d}
+.week-bar .tower{background:#43524d}.week-bar .tower.hit{background:#92dec3}
+.plan-nav a{border-color:#43524d}.plan-nav a:hover{background:#263033;border-color:#92dec3}
+
+/* Dismissible exercise instructions with persistent user preference */
+.guide-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:22px;margin-bottom:10px}
+.guide-heading h2{margin:0;min-width:0}
+.guide-close,.guide-open{display:inline-flex;justify-content:center;align-items:center;gap:6px;white-space:nowrap;flex-shrink:0;background:#263033!important;border:1px solid #a9b8b6!important;color:#edf4f1!important;min-height:40px;border-radius:10px}
+.guide-controls{margin-top:12px}.guide-open{width:100%;white-space:normal}
+.guide-wrap[hidden],.guide-open[hidden]{display:none!important}
+@media(max-width:390px){.guide-heading{align-items:flex-start}.guide-heading h2{font-size:17px}.guide-close{padding:9px 10px}}
+
+/* Native mobile-safe collapsing panels — independent of JS and stable on iOS Safari */
+.collapsible{min-width:0}
+.collapsible > summary{display:flex;align-items:center;justify-content:space-between;gap:12px;cursor:pointer;list-style:none;user-select:none;-webkit-user-select:none;min-height:46px;padding:10px 0;font-size:clamp(17px,4.3vw,21px);font-weight:700;line-height:1.3;color:var(--text)}
+.collapsible > summary::-webkit-details-marker{display:none}
+.collapsible > summary::marker{content:''}
+.collapsible > summary span:first-child{min-width:0;overflow-wrap:break-word}
+.collapsible .toggle-caption{display:inline-flex;flex:none;align-items:center;justify-content:center;min-width:79px;border-radius:10px;border:1px solid #a9b8b6;background:#263033;color:#edf4f1;font-size:13px;font-weight:650;padding:9px 10px}
+.collapsible .toggle-caption::after{content:'Hide  ✕'}
+.collapsible:not([open]) .toggle-caption::after{content:'Show  ▾'}
+.collapsible-content{padding-top:8px;min-width:0}
+.collapsible > summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:7px}
+@media(max-width:380px){.collapsible > summary{font-size:17px;gap:7px}.collapsible .toggle-caption{min-width:70px;padding:8px}}
+
+.app-tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:sticky;top:0;z-index:20;padding:9px 0;background:var(--bg,#121819)}
+.app-tabs button{border:1px solid #43524d;background:#191e20;color:#92dec3;border-radius:14px;padding:13px 12px;font-weight:750;font-size:15px;min-height:46px}.app-tabs button.active{background:#92dec3;color:white;border-color:#92dec3}
+#trackingView[hidden],#workoutView[hidden]{display:none!important}body.tracking-view .plan-nav{display:none}
+.weight-fields{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto;align-items:end;gap:10px;margin:14px 0}.weight-fields label{font-size:13px;color:var(--muted);display:grid;gap:6px;min-width:0}.weight-fields input{width:100%;min-width:0;max-width:100%;box-sizing:border-box;background:#121819;color:var(--text);border:1px solid #43524d;border-radius:10px;padding:12px;font-size:16px}.weight-fields button{min-height:46px}.target-row{grid-template-columns:minmax(0,1fr) auto}.weight-entry{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}.weight-entry button{padding:7px 12px}.weight-entry span{font-variant-numeric:tabular-nums}#bodyChart{width:100%;height:auto;display:block}#exerciseGoalFill{width:0%;transition:width .25s ease}
+@media(max-width:520px){.weight-fields{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.weight-fields button{grid-column:1/-1;width:100%}.target-row{grid-template-columns:minmax(0,1fr)}.app-tabs{top:0}}
+
+/* v12: permanent bottom dock, safe-area conscious and small-screen friendly */
+body{padding-bottom:env(safe-area-inset-bottom)}
+main{padding-bottom:calc(112px + env(safe-area-inset-bottom))!important}
+.bar.app-dock{position:fixed;bottom:0;left:0;right:0;margin:0!important;width:100%;padding:10px max(12px,env(safe-area-inset-left)) calc(10px + env(safe-area-inset-bottom)) max(12px,env(safe-area-inset-right));background:rgba(15,9,23,.97);border-top:1px solid #43524d;z-index:100;box-shadow:0 -12px 32px rgba(0,0,0,.42);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.bar.app-dock .dock-inner{max-width:850px;margin:auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) 1px minmax(0,.82fr) minmax(0,1.35fr);align-items:stretch;gap:8px}
+.bar.app-dock button{min-width:0;min-height:56px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:2px;padding:7px 5px;border-radius:12px;font-size:12px;line-height:1.2;font-weight:650;white-space:normal}
+.bar.app-dock .dock-tab{background:transparent;color:#92dec3;border:1px solid transparent}
+.bar.app-dock .dock-tab.active{background:#263033;border-color:#a9b8b6;color:#edf4f1}
+.bar.app-dock .dock-tab.active .dock-icon{color:#92dec3}
+.bar.app-dock .dock-icon{font-size:19px;line-height:1.1}
+.bar.app-dock .dock-separator{width:1px;background:#43524d;align-self:stretch;margin:6px 0}
+.bar.app-dock .dock-action.secondary{background:#191e20;border-color:#43524d}
+.bar.app-dock .dock-action.primary{background:#92dec3;border-color:#92dec3;color:#fff;font-weight:700}
+body.tracking-view .bar.app-dock .dock-action,body.tracking-view .bar.app-dock .dock-separator{display:none!important}
+body.tracking-view .bar.app-dock .dock-inner{grid-template-columns:repeat(2,minmax(0,1fr));max-width:440px}
+body.tracking-view .bar.app-dock button{min-height:54px}
+@media(max-width:380px){.bar.app-dock .dock-inner{gap:4px;grid-template-columns:minmax(0,1fr) minmax(0,1fr) 1px minmax(0,.75fr) minmax(0,1.25fr)}.bar.app-dock button{padding:7px 2px;font-size:10.5px}.bar.app-dock .dock-icon{font-size:17px}}
+@media print{.bar.app-dock{display:none!important}}
+
+/* v13 resilient iPhone floating dock */
+html{overflow-x:clip}body{min-width:0;overflow-x:clip}
+main{padding-bottom:calc(146px + env(safe-area-inset-bottom, 0px))!important}
+.bar.app-dock{position:fixed!important;left:50%!important;right:auto!important;top:auto!important;bottom:calc(14px + env(safe-area-inset-bottom, 0px))!important;transform:translateX(-50%)!important;width:calc(100% - 24px)!important;max-width:540px!important;margin:0!important;padding:8px!important;border:1px solid #a9b8b6!important;border-radius:22px!important;background:rgba(22,12,34,.97)!important;box-shadow:0 12px 35px rgba(0,0,0,.65),0 0 0 1px rgba(255,255,255,.04) inset!important;z-index:9999!important;isolation:isolate;overflow:hidden;touch-action:manipulation}
+.bar.app-dock .dock-inner{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,.82fr) minmax(0,1.08fr)!important;gap:5px!important;align-items:stretch}
+.bar.app-dock button{min-height:51px!important;min-width:0!important;padding:7px 2px!important;font-size:11px!important;line-height:1.2!important;letter-spacing:0!important;touch-action:manipulation;-webkit-tap-highlight-color:transparent;cursor:pointer}
+.bar.app-dock .dock-icon{font-size:19px!important}
+.bar.app-dock .dock-separator{display:none!important}
+.bar.app-dock .save-label{font-size:11px}
+body.tracking-view .bar.app-dock .dock-inner{grid-template-columns:repeat(2,minmax(0,1fr))!important;max-width:none!important}
+body.tracking-view .bar.app-dock .dock-action{display:none!important}
+@media(max-width:360px){.bar.app-dock{width:calc(100% - 16px)!important;padding:6px!important;border-radius:17px!important}.bar.app-dock .dock-inner{gap:3px!important}.bar.app-dock button{font-size:10px!important;padding:7px 1px!important}}
+@media(min-width:650px){.bar.app-dock{max-width:500px!important}}
+@media print{.bar.app-dock{display:none!important}}
+
+/* v14: edge-aligned dock, safe-area built INTO dock */
+html{scroll-padding-bottom:110px}
+body{padding-bottom:0}
+main{padding-bottom:calc(104px + env(safe-area-inset-bottom, 0px))!important}
+.bar.app-dock{position:fixed!important;top:auto!important;bottom:0!important;left:0!important;right:0!important;transform:none!important;width:100%!important;max-width:none!important;margin:0!important;box-sizing:border-box!important;border:0!important;border-top:1px solid #a9b8b6!important;border-radius:20px 20px 0 0!important;padding:8px max(10px,env(safe-area-inset-right, 0px)) calc(8px + env(safe-area-inset-bottom, 0px)) max(10px,env(safe-area-inset-left, 0px))!important;z-index:9999!important;overflow:visible!important}
+.bar.app-dock .dock-inner{max-width:560px!important;margin:0 auto!important;display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr)) minmax(0,.82fr) minmax(0,1.16fr)!important;gap:6px!important}
+.bar.app-dock button{position:relative!important;z-index:1!important;pointer-events:auto!important;min-height:50px!important;touch-action:manipulation!important}
+body.tracking-view .bar.app-dock .dock-inner{grid-template-columns:repeat(2,minmax(0,1fr))!important;max-width:390px!important}
+#toast{bottom:calc(88px + env(safe-area-inset-bottom,0px));z-index:9998}
+@media(max-width:360px){.bar.app-dock{padding-left:6px!important;padding-right:6px!important}.bar.app-dock .dock-inner{gap:3px!important}}
+
+/* v15: real anchor navigation; route rendering works even with JavaScript disabled */
+#trackingView {display:none!important}
+#workoutView {display:block}
+body:has(#trackingView:target) #workoutView {display:none!important}
+body:has(#trackingView:target) #trackingView {display:block!important}
+.bar.app-dock .dock-tab {display:flex!important;align-items:center;justify-content:center;flex-direction:column;gap:2px;min-width:0;min-height:50px;padding:7px 2px;border-radius:12px;font-size:11px;line-height:1.2;font-weight:650;text-decoration:none;touch-action:manipulation;-webkit-tap-highlight-color:transparent;position:relative;z-index:2}
+
+
+body:has(#trackingView:target) .bar.app-dock #tabWorkout {background:transparent!important;border-color:transparent!important;color:#92dec3!important}
+body:has(#trackingView:target) .bar.app-dock #tabTracking {background:#263033!important;border-color:#a9b8b6!important;color:#edf4f1!important}
+body:has(#trackingView:target) .bar.app-dock .dock-action {display:none!important}
+body:has(#trackingView:target) .bar.app-dock .dock-inner {grid-template-columns:repeat(2,minmax(0,1fr))!important;max-width:390px!important}
+#trackingView:target {scroll-margin-top:18px}
+#workoutView:target {scroll-margin-top:18px}
+@media(max-width:360px){.bar.app-dock .dock-tab{font-size:10px!important}}
+/* Stacking fixed dock directly above iOS safe-area, not too high */
+.bar.app-dock{bottom:0!important;transform:none!important}
+
+/* v16 — Mobile-safe tracking forms & uncluttered bottom two-tab navigation */
+#trackingView .panel,#trackingView .weight-fields,#trackingView .weight-fields > *,
+#trackingView .selector,#trackingView .chart-holder {min-width:0;max-width:100%}
+#trackingView .weight-fields {display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:end;gap:12px;margin:17px 0 22px;width:100%}
+#trackingView .weight-fields > label {display:flex;flex-direction:column;gap:8px;min-width:0;max-width:100%;line-height:1.4;overflow-wrap:break-word}
+#trackingView .weight-fields input,
+#trackingView .selector select {display:block;box-sizing:border-box;width:100%;min-width:0;max-width:100%;height:48px;font-size:16px;padding:10px 12px;line-height:normal;border-radius:11px}
+#trackingView input[type="date"] {appearance:none;-webkit-appearance:none;min-inline-size:0;max-inline-size:100%;text-align:left;}
+#trackingView .weight-fields > button {grid-column:1/-1;display:block;width:100%;min-width:0;min-height:48px;margin:0;white-space:normal}
+#trackingView .weight-fields.target-row{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+#trackingView .weight-fields.target-row > label{grid-column:1/2}
+#trackingView .weight-fields.target-row > button{grid-column:2/3;align-self:end}
+#trackingView .chart-holder svg{max-width:100%}
+@media(max-width:620px){
+  #trackingView .weight-fields,#trackingView .weight-fields.target-row {grid-template-columns:minmax(0,1fr)!important;gap:12px!important}
+  #trackingView .weight-fields > label,#trackingView .weight-fields > button,
+  #trackingView .weight-fields.target-row > label,#trackingView .weight-fields.target-row > button {grid-column:1/-1!important;width:100%!important;min-width:0!important}
+  #trackingView input[type="date"]{font-size:16px;padding-right:10px}
+}
+/* action bar now lives directly after the 20-set checklist */
+.workout-save-zone{display:flex;flex-direction:column;gap:11px;margin-top:23px;padding:20px 0 2px;border-top:1px solid var(--line)}
+.save-zone-head strong{font-size:17px;letter-spacing:-.02em}
+.save-zone-head p{font-size:13px;margin:5px 0 7px;max-width:530px}
+.workout-save-zone button{width:100%;min-height:53px;border-radius:13px;font-size:15px;line-height:1.3;touch-action:manipulation}
+.workout-save-zone .save-workout-btn{background:linear-gradient(130deg,#92dec3,#92dec3);border-color:#92dec3;font-weight:750;box-shadow:0 7px 18px #92dec333}
+.workout-save-zone .clear-workout-btn{background:transparent;border:1px solid #43524d;color:#92dec3;font-size:13px;min-height:42px}
+/* simplified navigation, same purple styling & edge-to-edge position */
+main{padding-bottom:calc(92px + env(safe-area-inset-bottom,0px))!important}
+.bar.app-dock{position:fixed!important;top:auto!important;left:0!important;right:0!important;bottom:0!important;transform:none!important;max-width:none!important;width:100%!important;margin:0!important;border:0!important;border-top:1px solid #a9b8b6!important;border-radius:18px 18px 0 0!important;padding:8px max(12px,env(safe-area-inset-right,0px)) calc(8px + env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px))!important;z-index:9999!important;overflow:visible!important}
+.bar.app-dock .dock-inner,body.tracking-view .bar.app-dock .dock-inner,
+body:has(#trackingView:target) .bar.app-dock .dock-inner{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:9px!important;max-width:470px!important;width:100%!important;margin:auto!important}
+.bar.app-dock .dock-tab{min-height:53px!important;padding:8px!important;font-size:12px!important;border-radius:12px!important;display:flex!important;flex-direction:column;align-items:center;justify-content:center;gap:4px;cursor:pointer;touch-action:manipulation}
+.bar.app-dock .dock-icon{font-size:20px!important}
+#toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))!important}
+@media(max-width:360px){.bar.app-dock .dock-inner{gap:7px!important}}
+@media print{.bar.app-dock{display:none!important}}
+
+/* v17: plan-builder, grouped library, and mobile-safe exercise editor */
+.plan-manager{scroll-margin-top:15px}.plan-manager h2{margin-bottom:5px}.builder-select{display:grid;gap:7px;font-size:13px;font-weight:650;color:var(--muted);margin:12px 0}.builder-select select,.builder-select input{height:48px;min-width:0;max-width:100%;width:100%;padding:11px 12px;font-size:16px;background:#121819;border:1px solid #43524d;border-radius:12px;color:var(--text)}
+.plan-buttons{display:grid;grid-template-columns:1.25fr 1fr auto;gap:8px;margin-top:12px}.plan-buttons button{min-width:0;padding:10px 7px;font-size:13px;white-space:normal}.plan-builder[hidden]{display:none!important}.plan-builder{padding-top:10px}.builder-divider{border-top:1px solid var(--line);margin:10px 0 18px}.plan-builder h3{font-size:16px;margin:15px 0 12px}.plan-builder .row h3{margin:0}
+.builder-exercise{padding:13px;margin:10px 0;background:#191e20;border:1px solid #43524d;border-radius:14px;min-width:0}.builder-top{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}.builder-top strong{font-size:14px;min-width:0;flex:1}.builder-actions{display:flex;gap:5px;flex:none}.builder-actions button{min-height:36px;padding:7px 10px;font-size:12px}.builder-fields{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin-top:10px;align-items:end}.builder-fields label,.catalog-filters label{display:grid;gap:6px;min-width:0;max-width:100%;color:var(--muted);font-size:11px;font-weight:600}.builder-fields input,.catalog-filters input,.catalog-filters select{min-width:0!important;max-width:100%;width:100%;height:44px;padding:8px 7px;color:var(--text);font-size:16px;border-radius:10px;background:#121819;border:1px solid #43524d}.builder-fields input{appearance:textfield}
+.catalog-filters{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:10px;margin-bottom:12px}.library-results{max-height:350px;overflow-y:auto;overscroll-behavior:contain;border:1px solid var(--line);border-radius:13px;padding:4px 11px}.library-item{display:flex;gap:10px;justify-content:space-between;align-items:center;padding:11px 0;border-bottom:1px solid var(--line)}.library-item:last-child{border:0}.library-item strong{display:block;font-size:13px}.library-item small{display:block;color:var(--muted);margin-top:3px}.library-item button{font-size:12px;min-height:37px;min-width:70px;padding:8px 10px}.builder-footer{display:grid;grid-template-columns:1.5fr 1fr;gap:9px;margin-top:17px}.builder-footer button{min-width:0;min-height:48px}
+@media(max-width:600px){.builder-fields{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:12px}.builder-fields label:nth-child(4),.builder-fields label:nth-child(5){grid-column:auto}.builder-top{align-items:flex-start}.builder-actions{flex-wrap:wrap}.catalog-filters{grid-template-columns:1fr 1fr}.plan-buttons{grid-template-columns:1.25fr 1fr auto}}
+@media(max-width:365px){.plan-buttons{grid-template-columns:1fr 1fr}.plan-buttons button:last-child{grid-column:1/-1}.builder-fields{grid-template-columns:repeat(2,minmax(0,1fr))}.catalog-filters{grid-template-columns:1fr}.library-results{max-height:300px}}
+
+/* Gym Bro v23 · Tracking additions and optional RIR. */
+.setrow .set-rir{grid-column:2 / span 3;display:flex;gap:9px;align-items:center;color:var(--muted);font-size:12px;padding:2px 0 7px}.setrow .set-rir input{width:86px;max-width:45%;font-size:14px;padding:7px 9px}.gb23-kpis{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.gb23-kpi{background:#191e20;border:1px solid #43524d;border-radius:14px;padding:15px;min-width:0}.gb23-kpi span,.gb23-kpi small{display:block;color:var(--muted);font-size:12px}.gb23-kpi strong{font-size:clamp(19px,4vw,27px);display:block;margin:6px 0;line-height:1.1}.gb23-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;margin:14px 0}.gb23-fields label,.gb23-dropdown{min-width:0;display:flex;flex-direction:column;gap:5px;font-size:13px;color:var(--muted)}.gb23-fields input,.gb23-fields select,.gb23-dropdown select{width:100%;min-width:0;max-width:100%;font:inherit;padding:11px;border:1px solid #43524d;border-radius:10px;background:#121819;color:var(--text)}.gb23-wide{grid-column:1 / -1}.gb23-full{width:100%;min-height:46px}.gb23-divider{border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:15px;margin-top:24px;padding-top:18px}.gb23-divider h3{margin:0;font-size:16px}.gb23-dropdown{width:150px}.gb23-list{display:grid;gap:8px}.gb23-item{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 0;border-top:1px solid #263033}.gb23-item p{margin:0}.gb23-item-actions{display:flex;gap:5px;flex-wrap:wrap}.gb23-item button{font-size:12px;padding:8px 10px}.gb23-muscles{display:grid;gap:12px;margin-top:16px}.gb23-muscle-top{display:flex;justify-content:space-between;gap:8px;font-size:13px}.gb23-track{height:8px;background:#263033;border-radius:50px;overflow:hidden;margin-top:6px}.gb23-track div{height:100%;background:linear-gradient(90deg,#92dec3,#92dec3);border-radius:inherit}.gb23-review{display:grid;gap:10px;margin-top:15px}.gb23-review-box{padding:13px;border:1px solid #43524d;border-radius:12px;background:#191e20}.gb23-review-box b{display:block;font-size:15px;margin-bottom:5px}.gb23-review-box p{font-size:13px;margin:0}.gb23-pill{border:1px solid #43524d;border-radius:50px;color:var(--muted);font-size:12px;padding:6px 10px;white-space:nowrap}.gb23-photo-grid,.gb23-photo-compare{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:16px}.gb23-photo{min-width:0;background:#191e20;border:1px solid #43524d;border-radius:12px;overflow:hidden}.gb23-photo img{width:100%;height:180px;object-fit:cover;display:block}.gb23-photo .info{padding:10px;font-size:12px}.gb23-photo button{width:100%;margin-top:8px;font-size:12px}.gb23-photo-compare img{height:245px}.gb23-empty{grid-column:1 / -1;border:1px dashed #43524d;border-radius:12px;padding:20px;text-align:center;color:var(--muted);font-size:13px}input[type=file]{max-width:100%;font-size:13px}#gb23PhotoStatus{overflow-wrap:anywhere}.gb23-dash{margin-top:12px}@media(max-width:400px){.gb23-fields{grid-template-columns:minmax(0,1fr)}.gb23-wide{grid-column:auto}.gb23-kpi{padding:11px}.gb23-photo img{height:140px}.gb23-photo-compare img{height:190px}.gb23-divider{flex-wrap:wrap}.gb23-dropdown{width:100%}}
+
+/* v31 — resolved card overflow, unified surfaces and unobtrusive motion. */
+:root{--gb-radius:17px;--gb-outline:#43524d;--gb-ease-final:cubic-bezier(.2,.75,.25,1)}
+html{-webkit-text-size-adjust:100%;scroll-padding-bottom:calc(85px + env(safe-area-inset-bottom,0px))}
+body{overflow-x:clip}
+#workoutView,#trackingView{min-width:0}
+:where(#workoutView,#trackingView) :where(.panel,.gb-exercise-card,.gb-ex-target,.builder-step,.plan-choice,.gb23-kpi,.tile){min-width:0;max-width:100%;box-sizing:border-box}
+:where(#workoutView,#trackingView) :where(h1,h2,h3,p,span,label,summary,button,td,th){overflow-wrap:break-word}
+/* Consistent text hierarchy and dense but airy content */
+#workoutView .section-title,#trackingView .section-title{letter-spacing:.10em;line-height:1.35}
+.plan-manager,.gb-plan-outline,#workoutLog{min-width:0}
+.plan-pick-grid{min-width:0}
+.plan-choice{min-width:0!important;overflow:hidden}
+.plan-choice-name,.plan-choice-meta{min-width:0!important;max-width:100%!important;overflow-wrap:anywhere!important;white-space:normal!important}
+.plan-buttons>button,.plan-buttons>details{min-width:0;overflow-wrap:break-word}
+.plan-builder-content :where(input,select,button){max-width:100%;min-width:0}
+.builder-step{min-width:0!important;overflow-wrap:anywhere}
+.builder-step :where(.builder-step-head,.builder-heading){min-width:0;max-width:100%;flex-wrap:wrap}
+/* Unconstrained badges: previous max-width=76/90px clipped 12–20 reps. */
+#exerciseList .gb-exercise-header{display:grid!important;grid-template-columns:32px minmax(0,1fr)!important;grid-template-rows:auto auto!important;gap:2px 9px!important;align-items:center!important;width:100%!important;min-width:0!important;overflow:visible!important}
+#exerciseList .gb-ex-number{grid-column:1!important;grid-row:1 / span 2!important;align-self:start!important;justify-self:start!important;min-width:30px!important;padding:7px 4px!important}
+#exerciseList .gb-ex-title{grid-column:2!important;grid-row:1!important;min-width:0!important;flex:none!important;max-width:100%!important}
+#exerciseList .gb-ex-title h3{font-size:clamp(14px,2.8vw,16px)!important;line-height:1.28!important;white-space:normal!important;overflow-wrap:break-word!important;word-break:normal!important}
+#exerciseList .gb-ex-meta{grid-column:2!important;grid-row:2!important;justify-self:start!important;display:inline-block!important;flex:none!important;max-width:100%!important;width:auto!important;min-width:0!important;white-space:normal!important;overflow-wrap:normal!important;line-height:1.3!important;text-align:left!important;padding:4px 9px!important;font-size:10px!important;border-radius:8px!important}
+#exerciseList .gb-ex-focus{display:block!important;margin-top:3px!important}
+#exerciseList .gb-ex-target{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;gap:8px!important;padding:10px 11px!important;align-items:center!important}
+#exerciseList .gb-target-key{min-width:0!important;overflow-wrap:break-word!important;line-height:1.35!important}
+#exerciseList .gb-ex-target strong{min-width:0!important;max-width:100%!important;overflow-wrap:break-word!important;line-height:1.3!important;text-align:right!important}
+#exerciseList .gb-set-grid.has-rir{width:100%!important;max-width:100%!important;min-width:0!important;grid-template-columns:minmax(16px,.26fr) minmax(55px,1.28fr) minmax(46px,.93fr) minmax(36px,.60fr) minmax(25px,.39fr)!important;gap:clamp(4px,.8vw,8px)!important}
+#exerciseList .gb-set-head>*{min-width:0!important;white-space:normal!important;line-height:1.25!important;font-size:clamp(9px,1.65vw,11px)!important;overflow:visible!important}
+#exerciseList .gb-set-grid.setrow input:not([type=checkbox]){min-width:0!important;max-width:100%!important;box-sizing:border-box!important}
+#exerciseList .gb-ex-quick{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:6px!important;width:100%!important}
+#exerciseList .gb-ex-quick button{width:100%!important;white-space:normal!important;min-width:0!important;min-height:38px!important;padding:7px 3px!important;line-height:1.25!important;overflow-wrap:normal!important}
+#exerciseList .gb-ex-detail{max-width:100%!important}
+#exerciseList .gb-ex-detail summary{white-space:normal!important;min-width:0!important}
+/* Exercise overview: table never forces content outside its panel. */
+#workoutPlan .gb-plan-outline{max-width:100%;min-width:0;overflow:hidden}
+#workoutPlan .plan-table{width:100%!important;min-width:0!important;max-width:100%!important;table-layout:fixed!important}
+#workoutPlan .plan-table th,#workoutPlan .plan-table td{overflow-wrap:break-word!important;word-break:normal!important;white-space:normal!important;vertical-align:middle!important;line-height:1.4!important}
+#workoutPlan .plan-table th:nth-child(1),#workoutPlan .plan-table td:nth-child(1){width:51%!important}
+#workoutPlan .plan-table th:nth-child(2),#workoutPlan .plan-table td:nth-child(2){width:26%!important}
+#workoutPlan .plan-table th:nth-child(3),#workoutPlan .plan-table td:nth-child(3){width:23%!important}
+#workoutPlan .plan-table td:first-child{max-width:none!important}
+#workoutLog .row.spread>label{min-width:0!important;max-width:100%!important}
+#workoutLog #sessionHeading{flex:1 1 200px;min-width:0;overflow-wrap:anywhere}
+#workoutLog input[type=date]{max-width:100%!important;min-width:0!important}
+/* Inputs have consistent focus cues and no exaggerated movement. */
+:where(input,select,button,summary,a){-webkit-tap-highlight-color:transparent}
+:where(input[type=number],input[type=date],input[type=text],select,textarea){transition:border-color .17s ease,box-shadow .17s ease!important}
+:where(input[type=number],input[type=date],input[type=text],select,textarea):focus{outline:none!important;border-color:#92dec3!important;box-shadow:0 0 0 3px rgba(188,131,255,.15)!important}
+:where(button,.plan-choice,.create-plan-summary,.dock-tab){transition:background-color .17s ease,border-color .17s ease,color .17s ease,box-shadow .17s ease,opacity .17s ease!important}
+@media(hover:hover) and (pointer:fine){button:not(:disabled):hover,.plan-choice:hover{filter:brightness(1.08)}}
+@media(hover:none){button:hover,.plan-choice:hover{filter:none}}
+/* All content stays above the bottom dock. */
+main{padding-bottom:calc(120px + env(safe-area-inset-bottom,0px))!important}
+#workoutView .panel:last-child,#trackingView .panel:last-child{margin-bottom:22px}
+@media(max-width:380px){
+ #exerciseList .gb-exercise-header{grid-template-columns:29px minmax(0,1fr)!important;gap:2px 7px!important}
+ #exerciseList .gb-ex-meta{font-size:10px!important;max-width:100%!important;padding:4px 8px!important}
+ #exerciseList .gb-set-grid.has-rir{grid-template-columns:16px minmax(52px,1.25fr) minmax(43px,.9fr) minmax(34px,.6fr) 24px!important;gap:4px!important}
+ #exerciseList .gb-set-grid.setrow input:not([type=checkbox]){font-size:13px!important;padding-left:2px!important;padding-right:2px!important}
+ #workoutPlan .plan-table th,#workoutPlan .plan-table td{padding:9px 3px!important;font-size:10px!important}
+}
+@media(min-width:780px){
+ #exerciseList .gb-exercise-header{grid-template-columns:32px minmax(0,1fr)!important}
+ #exerciseList .gb-ex-meta{font-size:11px!important}
+ #exerciseList .gb-ex-quick button{padding:8px 5px!important}
+}
+@media(prefers-reduced-motion:reduce){
+ :where(button,.plan-choice,.create-plan-summary,.dock-tab,input,select,textarea){transition:none!important}
+ html{scroll-behavior:auto!important}
+}
+
+
+
+
+/* Gym Bro v18 — premium responsive design system */
+:root{--bg:#121819;--card:#121819;--card2:#191e20;--line:#263033;--text:#edf4f1;--muted:#a9b8b6;--accent:#92dec3;--blue:#92dec3;--warn:#f5cfa0}
+html{scroll-behavior:smooth;scroll-padding-top:16px}body{color:var(--text);background:radial-gradient(ellipse 680px 420px at 50% -120px,#263033 0,transparent 76%),#121819;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",Inter,"Segoe UI",sans-serif;letter-spacing:-.012em;-webkit-tap-highlight-color:transparent}main{max-width:820px;padding:20px 14px calc(116px + env(safe-area-inset-bottom,0px));min-width:0}.sr-only{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+.top.brand-bar{align-items:center;gap:10px;padding:10px 3px 16px;flex-wrap:wrap}.brand-signature{display:flex;align-items:center;gap:13px;min-width:0}.gb-monogram{width:66px;height:66px;flex:0 0 66px;filter:drop-shadow(0 8px 23px rgba(144,75,224,.21))}.gb-monogram svg{display:block;width:66px;height:66px}.brand-wordmark{font-size:24px;line-height:1.12;font-weight:850;letter-spacing:-.075em;color:#edf4f1}.brand-wordmark span{color:#92dec3}.brand-kicker{display:block;color:#92dec3;font-size:9px;font-weight:800;letter-spacing:.22em;margin-bottom:4px}.brand-sub{font-size:12px;color:#a9b8b6;margin-top:3px}.status-pill{margin-left:auto;background:#191e20;border-color:#43524d;font-size:10px;font-weight:650;letter-spacing:.055em;color:#92dec3}.status-pill .dot{display:inline-block;background:#92dec3;width:5px;height:5px;border-radius:100%;margin:0 2px 1px 3px}
+.panel{background:linear-gradient(160deg,rgba(33,24,47,.96),rgba(18,14,28,.98) 80%);border:1px solid rgba(154,119,191,.20);border-radius:23px;box-shadow:0 12px 35px rgba(0,0,0,.18);padding:20px;margin:16px 0;min-width:0;overflow:visible}h2{font-weight:780;letter-spacing:-.04em;font-size:21px}h3{letter-spacing:-.025em}p{line-height:1.55} .section-title{font-size:10px!important;font-weight:850!important;letter-spacing:.16em!important;color:#92dec3!important;text-transform:uppercase}.sub,.muted{color:#a9b8b6}button,select,input,.filebtn{font-family:inherit;max-width:100%;min-width:0}button{touch-action:manipulation;transition:background .16s,border-color .16s,transform .12s}button:active:not(:disabled){transform:scale(.98)}button.primary{background:linear-gradient(135deg,#92dec3,#92dec3)!important;border:1px solid #92dec3!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 4px 18px rgba(133,62,206,.15);color:#fff!important}button:hover:not(:disabled){border-color:#92dec3}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:2px solid #92dec3;outline-offset:2px}input:not([type="checkbox"]),select{background:#121819!important;border:1px solid #43524d!important;border-radius:13px!important;color:#edf4f1!important;min-height:46px!important;font-size:16px!important;padding:11px 12px!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.02)}input:not([type="checkbox"]):focus,select:focus{border-color:#92dec3!important;box-shadow:0 0 0 3px rgba(172,108,241,.15)!important}input[type="checkbox"]{accent-color:#92dec3}label{min-width:0} .plan-manager{border-color:#43524d}.plan-manager>p.sub{max-width:500px;margin-bottom:19px}.plan-pick-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:0 0 16px}.plan-choice{width:100%;min-height:104px;text-align:left;display:flex;flex-direction:column;align-items:flex-start;gap:5px;justify-content:flex-start;position:relative;padding:15px 13px 13px;border-radius:16px;background:#121819;border:1px solid #43524d;color:#edf4f1}.plan-choice.is-selected{background:linear-gradient(160deg,#43524d 0%,#263033 95%);border-color:#92dec3;box-shadow:0 0 0 1px rgba(188,128,255,.15) inset}.plan-choice-check{align-self:flex-end;height:20px;line-height:18px;color:#92dec3;font-size:16px}.plan-choice.is-selected .plan-choice-check{background:#92dec3;color:white;border-radius:50%;font-size:12px;height:20px;width:20px;text-align:center}.plan-choice-name{font-weight:750;font-size:13px;line-height:1.32;overflow-wrap:anywhere}.plan-choice-meta{color:#a9b8b6;font-size:11px}.switch-plan-select{display:block;font-size:12px!important;color:#a9b8b6!important;margin:8px 0 14px}.switch-plan-select select{display:block;width:100%;margin-top:6px}.plan-buttons{display:grid!important;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr) auto;gap:8px!important;margin-top:12px}.plan-buttons button{min-width:0;white-space:normal;padding:11px 9px!important;border-radius:12px!important;min-height:45px;font-size:13px!important}.plan-buttons #deletePlanBtn{font-size:12px!important;color:#d5bcca!important}.plan-builder{border:0!important;margin-top:10px}.plan-builder[hidden]{display:none!important}.builder-divider{border-color:#43524d}.builder-select input{width:100%}.builder-fields{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px!important}.builder-fields label{font-size:11px!important;color:#a9b8b6!important}.builder-fields input{width:100%;margin-top:5px}.builder-exercise{background:#121819!important;border:1px solid #43524d!important;border-radius:16px!important;padding:13px!important;margin:10px 0!important}.builder-top{display:flex;align-items:start;justify-content:space-between;gap:8px}.builder-top strong{font-size:13px;line-height:1.35}.builder-actions{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:4px}.builder-actions button{padding:7px 8px!important;font-size:12px!important;min-height:35px}.builder-footer{display:flex;flex-wrap:wrap;gap:8px}.builder-footer button{flex:1;min-height:44px}.catalog-filters{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px!important}.catalog-filters>label{min-width:0!important}.catalog-filters input,.catalog-filters select{width:100%!important}.library-results{display:block!important}.catalog-group-label{padding:14px 0 6px;color:#92dec3;font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:850}.library-item{display:flex;align-items:center;justify-content:space-between;gap:8px;border:1px solid #263033;background:#121819;border-radius:13px;margin:6px 0;padding:11px 12px!important}.library-item div{min-width:0}.library-item strong{font-size:12px;overflow-wrap:anywhere}.library-item small{color:#a9b8b6}.library-item button{font-size:12px;min-height:38px;min-width:76px;padding:8px!important}.library-item button:disabled{border-color:#263033!important;color:#92dec3}.library-heading{display:flex;justify-content:space-between;gap:10px;align-items:center}.library-count{font-size:10px;color:#92dec3;font-weight:550;white-space:nowrap}.plan-table{width:100%}.ex{padding-top:22px!important;margin-top:23px!important}.ex h3{font-size:16px;line-height:1.25}.exhead{min-width:0}.hint{background:#191e20!important;border:1px solid #43524d!important;border-radius:12px!important;color:#92dec3}.quick-row{display:flex;flex-wrap:wrap;gap:7px}.quick-row button{font-size:12px;padding:8px 10px!important}.cols{grid-template-columns:30px minmax(0,1fr) minmax(0,1fr) 47px!important;column-gap:8px!important}.cols input:not([type="checkbox"]){width:100%;text-align:center;padding:10px 5px!important}.cols label{font-size:11px!important;white-space:normal!important}.setrow{align-items:center!important}.workout-save-zone{padding-top:20px!important}.weight-fields,.target-row{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:11px!important}.weight-fields>*{min-width:0!important}.weight-fields button{min-height:46px}#bodyWeightPanel .weight-fields button{align-self:end}canvas,svg{max-width:100%}#trackingView .panel{overflow:hidden}.app-dock{bottom:0!important;left:0!important;right:0!important;width:100%!important;max-width:none!important;border-radius:19px 19px 0 0!important;background:rgba(18,10,30,.95)!important;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);padding:8px max(12px,env(safe-area-inset-right,0px)) calc(7px + env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px))!important;box-shadow:0 -10px 30px rgba(0,0,0,.3);z-index:9999}.dock-inner{max-width:800px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:9px}.dock-tab{min-height:55px!important;border-radius:13px!important;font-size:12px;font-weight:750}.dock-tab[aria-current="page"],.dock-tab.active{background:#43524d!important;border-color:#92dec3!important;color:#edf4f1!important}.dock-icon{display:inline-flex!important;align-items:center;justify-content:center;font-size:17px!important}
+@media(max-width:500px){.status-pill{display:none}.brand-bar{flex-wrap:nowrap!important}.brand-signature{min-width:0}}
+@media(max-width:390px){main{padding-left:12px;padding-right:12px}.panel{padding:16px}.brand-wordmark{font-size:22px}.status-pill{font-size:9px;padding:5px 7px}.plan-choice{padding:12px 10px}.plan-choice-name{font-size:12px}.plan-buttons{grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto}.builder-actions button{padding:6px!important}.cols{column-gap:5px!important;grid-template-columns:22px minmax(0,1fr) minmax(0,1fr) 38px!important}.cols input:not([type="checkbox"]){padding:8px 2px!important}.catalog-filters{grid-template-columns:1fr}.weight-fields,.target-row{grid-template-columns:1fr!important}}
+@media(min-width:680px){main{padding-top:30px}.top.brand-bar{margin-bottom:16px}.panel{padding:26px}.plan-pick-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.builder-fields{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{transition-duration:0s!important;scroll-behavior:auto!important}}
+
+
+
+/* v19 polished mobile-first design: no accidental edge clipping. */
+:root{--bg:#121819;--card:#121819;--card2:#191e20;--line:#263033;--text:#edf4f1;--muted:#a9b8b6;--accent:#92dec3}
+html{box-sizing:border-box;scroll-padding-top:16px}body{background:#121819!important;color:var(--text)}
+main{width:100%!important;max-width:820px!important;padding:0 16px calc(100px + env(safe-area-inset-bottom,0px))!important;margin:0 auto!important;overflow:visible!important}
+.gb-header{width:100%;display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:82px;padding:16px 0 13px;border-bottom:1px solid #263033;margin-bottom:18px;min-width:0}
+.gb-header-identity{display:flex;align-items:center;gap:11px;min-width:0;flex:1}
+.gb-header-mark{width:48px;height:48px;flex:0 0 48px}.gb-header-mark svg{display:block;width:48px;height:48px}
+.gb-header-type{min-width:0}.gb-header-name{font-size:23px;font-weight:780;letter-spacing:-.065em;line-height:1.05;color:#edf4f1}.gb-header-caption{font-size:9px;font-weight:650;letter-spacing:.18em;color:#a9b8b6;margin-top:6px}
+.gb-header-status{display:flex;align-items:center;gap:6px;border:1px solid #43524d;background:#121819;color:#a9b8b6;padding:7px 8px;border-radius:100px;white-space:nowrap;font-size:9px;letter-spacing:.07em;font-weight:750;flex:0 0 auto}
+.gb-status-dot{width:6px;height:6px;border-radius:50%;background:#92dec3}
+.panel{background:#121819!important;background-image:none!important;border:1px solid #263033!important;box-shadow:0 8px 28px rgba(0,0,0,.13)!important;border-radius:19px!important;padding:19px!important;margin:12px 0 16px!important;overflow:visible!important}
+.panel h2{font-size:20px!important;font-weight:760;letter-spacing:-.038em;margin-bottom:10px}.section-title{letter-spacing:.13em!important;color:#92dec3!important;font-size:10px!important}
+.plan-manager{border-color:#43524d!important}.plan-pick-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}
+.plan-choice{min-height:96px!important;border-radius:14px!important;padding:13px!important;background:#121819!important;border:1px solid #43524d!important;transition:background .16s,border-color .16s,box-shadow .16s}
+.plan-pick-grid>.plan-choice:only-child{grid-column:1/-1;min-height:82px!important}.backup #exportBtn{display:none!important}.plan-choice.is-selected{background:#263033!important;border-color:#92dec3!important;box-shadow:inset 0 0 0 1px rgba(181,139,239,.2)!important}
+.plan-choice:active{transform:scale(.987)}.plan-choice .plan-choice-name{font-size:13px;font-weight:750}.plan-choice .plan-choice-meta{font-size:10px;color:#a9b8b6}.plan-choice-check{margin-left:auto;font-size:12px!important}
+.plan-buttons{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;gap:8px!important}.plan-buttons #deletePlanBtn{grid-column:1/-1;min-height:36px!important;color:#a9b8b6!important;background:transparent!important;border:1px solid #43524d!important}
+button,.filebtn{border-radius:12px!important}button.primary{background:#92dec3!important;background-image:none!important;border:1px solid #92dec3!important;box-shadow:none!important}
+button:hover:not(:disabled){border-color:#92dec3!important}
+input:not([type=checkbox]),select{border-radius:11px!important;background:#121819!important;color:#edf4f1!important;border-color:#43524d!important;padding:10px!important;min-width:0!important;max-width:100%!important}
+#workoutView,#trackingView,.panel,.weight-fields,.target-row{min-width:0;max-width:100%}
+#trackingView .weight-fields{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;align-items:end;gap:9px!important}
+#trackingView .weight-fields>button{grid-column:1/-1!important;width:100%}
+#trackingView .weight-fields>label{min-width:0;max-width:100%}
+#trackingView .weight-fields input{display:block;width:100%;min-width:0}
+#trackingView .selector{width:100%;max-width:none!important}
+.grid.metrics,.grid{gap:7px!important}.tile{min-width:0!important;padding:11px 9px!important;border:1px solid #263033;border-radius:12px!important}.stat{font-size:clamp(15px,4vw,24px)!important}
+.cols{grid-template-columns:23px minmax(0,1fr) minmax(0,1fr) 38px!important;gap:7px!important}.cols input:not([type=checkbox]){text-align:center!important;padding:10px 2px!important}
+.cols label{white-space:normal!important;overflow-wrap:normal!important}.ex{margin-top:20px!important;padding-top:21px!important}
+.plan-table{table-layout:fixed}.plan-table th:first-child,.plan-table td:first-child{width:49%}.plan-table th:nth-child(2),.plan-table td:nth-child(2){width:29%}
+.plan-table th,.plan-table td{overflow-wrap:anywhere}
+.bar.app-dock{position:fixed!important;bottom:0!important;left:0!important;right:0!important;width:100%!important;margin:0!important;transform:none!important;padding:8px max(14px,env(safe-area-inset-right,0px)) calc(8px + env(safe-area-inset-bottom,0px)) max(14px,env(safe-area-inset-left,0px))!important;border-top:1px solid #43524d!important;border-radius:16px 16px 0 0!important;background:rgba(18,13,27,.97)!important;z-index:9999!important;backdrop-filter:blur(14px)}
+.bar.app-dock .dock-inner{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;max-width:600px!important;gap:8px!important}
+.bar.app-dock .dock-tab{min-height:53px!important;border-radius:12px!important;font-size:12px!important;touch-action:manipulation}
+#toast{bottom:calc(89px + env(safe-area-inset-bottom,0px))!important}
+@media(max-width:420px){main{padding-left:12px!important;padding-right:12px!important}.gb-header{min-height:76px;padding:13px 2px 12px}.gb-header-name{font-size:21px}.gb-header-caption{font-size:8px}.gb-header-status{font-size:8px;padding:6px 7px}.panel{padding:15px!important;border-radius:17px!important}.plan-choice{min-height:91px!important;padding:11px!important}.cols{gap:5px!important;grid-template-columns:22px minmax(0,1fr) minmax(0,1fr) 36px!important}.cols label{font-size:10px!important}}
+@media(max-width:340px){.gb-header-status span:last-child{display:none}.gb-header-status{padding:8px}.plan-buttons{gap:6px!important}.plan-buttons button{font-size:12px!important}#trackingView .weight-fields{grid-template-columns:minmax(0,1fr)!important}}
+@media(min-width:700px){main{padding-left:22px!important;padding-right:22px!important}.gb-header{padding:20px 3px}.gb-header-name{font-size:26px}.panel{padding:24px!important}.plan-pick-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}.plan-buttons{grid-template-columns:1.3fr 1fr auto!important}.plan-buttons #deletePlanBtn{grid-column:auto;min-height:44px!important}}
+
+
+/* Stable navigation layer, outside scrollable main, anchored to the viewport edge. */
+html{min-height:100%;scroll-padding-bottom:110px}
+body{min-height:100vh;min-height:100dvh;margin:0}
+main{padding-bottom:calc(115px + env(safe-area-inset-bottom,0px))!important}
+body > nav.bar.app-dock{
+  position:fixed!important;inset:auto 0 0 0!important;top:auto!important;
+  left:0!important;right:0!important;bottom:0!important;
+  width:100%!important;max-width:none!important;height:auto!important;
+  margin:0!important;transform:none!important;
+  box-sizing:border-box!important;
+  padding:8px max(12px,env(safe-area-inset-right,0px)) calc(8px + env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px))!important;
+  border-radius:17px 17px 0 0!important;border:0!important;border-top:1px solid #43524d!important;
+  background:rgba(18,13,27,.98)!important;z-index:9999!important;
+  box-shadow:0 -10px 25px rgba(0,0,0,.18);overflow:visible!important;
+  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+}
+body > nav.bar.app-dock .dock-inner{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:9px!important;width:100%!important;max-width:600px!important;margin:0 auto!important}
+body > nav.bar.app-dock .dock-tab{min-height:53px!important;position:relative!important;z-index:1!important}
+/* Plan actions: edit + delete together, create below as primary action. */
+.plan-manager .plan-buttons{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:9px!important;align-items:stretch!important}
+.plan-manager .plan-buttons button{width:100%!important;min-width:0!important;min-height:46px!important;padding:11px 10px!important;font-size:13px!important}
+.plan-manager .plan-buttons #editPlanBtn{grid-column:1!important;grid-row:1!important}
+.plan-manager .plan-buttons #deletePlanBtn{grid-column:2!important;grid-row:1!important;min-height:46px!important;background:transparent!important;color:#a9b8b6!important;border:1px solid #43524d!important}
+.plan-manager .plan-buttons #newPlanBtn{grid-column:1 / -1!important;grid-row:2!important;min-height:50px!important;font-weight:750!important}
+@media print{body > nav.bar.app-dock{display:none!important}}
+
+
+/* Native expandable plan creator: the panel can open in static HTML preview. */
+.plan-manager .plan-buttons #planBuilder{grid-column:1/-1!important;grid-row:2!important;display:block!important;width:100%!important;min-width:0!important;margin:0!important;padding:0!important;border:0!important;background:transparent!important;}
+.plan-manager .plan-buttons #planBuilder > summary{list-style:none!important;display:flex!important;align-items:center;justify-content:center;min-height:50px!important;border-radius:12px!important;padding:13px 10px!important;width:100%!important;box-sizing:border-box!important;background:linear-gradient(135deg,#92dec3,#92dec3)!important;border:1px solid #92dec3!important;color:#fff!important;font-size:14px!important;font-weight:780!important;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;}
+.plan-manager .plan-buttons #planBuilder > summary::-webkit-details-marker{display:none}
+.plan-manager .plan-buttons #planBuilder > summary:focus-visible{outline:2px solid #edf4f1;outline-offset:3px}
+.plan-manager .plan-buttons #planBuilder[open] > summary{background:linear-gradient(135deg,#92dec3,#43524d)!important}
+.plan-manager .plan-buttons #planBuilder .plan-builder-content{min-width:0!important;max-width:100%!important;padding:8px 0 5px!important;}
+.plan-manager .plan-buttons #planBuilder .plan-builder-content > *{min-width:0}
+.plan-manager .plan-buttons #planBuilder .builder-exercise,.plan-manager .plan-buttons #planBuilder .library-results,.plan-manager .plan-buttons #planBuilder .catalog-filters{max-width:100%}
+.plan-manager .plan-buttons #planBuilder .js-required{font-size:13px;line-height:1.5;color:#edf4f1;background:#191e20;padding:12px;border:1px solid #a9b8b6;border-radius:12px}
+@media(max-width:390px){.plan-manager .plan-buttons #planBuilder .catalog-filters,.plan-manager .plan-buttons #planBuilder .builder-fields{grid-template-columns:repeat(2,minmax(0,1fr))!important}.plan-manager .plan-buttons #planBuilder .builder-footer{display:grid!important;grid-template-columns:1fr 1fr!important}.plan-manager .plan-buttons #planBuilder .builder-footer button{min-width:0!important;white-space:normal!important}}
+
+
+#planBuilder .plan-builder-content{padding-top:12px!important;}
+#planBuilder .builder-heading{display:flex;justify-content:space-between;align-items:start;gap:10px;margin:16px 0 12px;flex-wrap:wrap}
+#planBuilder .builder-heading strong{color:#edf4f1;font-size:16px;letter-spacing:-.02em}
+#planBuilder .builder-heading p{margin:4px 0 0;font-size:12px;line-height:1.45}
+#builderCount{font-size:11px;color:#92dec3;background:#191e20;border:1px solid #43524d;border-radius:100px;padding:7px 9px;white-space:nowrap}
+#planBuilder .builder-stack{display:flex;flex-direction:column;gap:10px;max-width:100%}
+#planBuilder .builder-step{display:flex;flex-direction:column;gap:10px;padding:15px;background:linear-gradient(145deg,#191e20,#121819);border:1px solid #43524d;border-radius:16px;min-width:0;width:100%;box-sizing:border-box;}
+#planBuilder .builder-step-head{display:flex;align-items:center;justify-content:space-between;gap:9px;min-height:22px;}
+#planBuilder .builder-step-label{font-size:10px;letter-spacing:.14em;font-weight:800;color:#92dec3}
+#planBuilder .builder-step-controls{display:flex;gap:6px;align-items:center}
+#planBuilder .builder-step-controls button{min-height:31px!important;min-width:31px!important;padding:5px 8px!important;font-size:12px!important;border-radius:9px!important}
+#planBuilder .builder-remove{background:transparent!important;border-color:#43524d!important;color:#92dec3!important}
+#planBuilder .builder-block-label{display:grid;gap:7px;min-width:0;max-width:100%;font-size:12px;font-weight:650;color:#a9b8b6}
+#planBuilder .builder-block-label select,#planBuilder .builder-block-label input{display:block;width:100%!important;max-width:100%!important;min-width:0!important;box-sizing:border-box!important;min-height:48px!important;line-height:1.25!important}
+#planBuilder .builder-native-select{appearance:auto!important;-webkit-appearance:menulist!important;touch-action:manipulation;background:#121819!important;}
+#planBuilder .builder-native-select option,#planBuilder .builder-native-select optgroup{background:#121819;color:#edf4f1}
+#planBuilder .builder-advanced{background:transparent;border-top:1px solid #263033;padding-top:10px;margin-top:3px}
+#planBuilder .builder-advanced summary{color:#92dec3;font-size:12px;font-weight:700;cursor:pointer;padding:6px 0;}
+#planBuilder .builder-advanced .builder-fields{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:11px;margin:11px 0 2px;}
+#planBuilder .builder-advanced .builder-fields label{min-width:0!important;word-break:normal}
+#planBuilder .builder-advanced input{width:100%!important}
+#planBuilder .add-exercise-block{width:100%!important;min-height:53px!important;display:flex;gap:10px;align-items:center;justify-content:center;margin-top:12px;padding:10px!important;border-radius:13px!important;border:1px dashed #92dec3!important;background:#191e20!important;color:#edf4f1!important;font-size:14px!important;font-weight:750!important}
+#planBuilder .add-exercise-plus{font-size:23px;font-weight:400;line-height:1}
+#planBuilder .builder-help{font-size:11px;margin:13px 0 4px;line-height:1.5}
+#planBuilder .builder-footer{margin-top:18px!important;}
+@media(max-width:390px){#planBuilder .builder-step{padding:12px}#planBuilder .builder-advanced .builder-fields{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+
+
+.gb-header{position:relative!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:12px!important}
+.gb-settings{margin-left:auto;position:static;z-index:2000;flex:0 0 auto}
+.gb-settings-trigger{list-style:none;display:flex;align-items:center;justify-content:center;width:43px;height:43px;background:#191e20;border:1px solid #43524d;border-radius:13px;color:#92dec3;cursor:pointer;touch-action:manipulation}
+.gb-settings-trigger::-webkit-details-marker{display:none}
+.gb-settings[open] .gb-settings-trigger{background:#263033;border-color:#92dec3}
+.gb-settings-panel{position:absolute;right:0;top:calc(100% + 8px);width:min(400px,calc(100vw - 28px));max-height:min(75dvh,680px);overflow-y:auto;overscroll-behavior:contain;background:#121819;border:1px solid #a9b8b6;border-radius:18px;box-shadow:0 18px 65px #000c;padding:18px;z-index:9000;text-align:left}
+.gb-settings-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.gb-settings-top h2{margin:0}
+.gb-settings-close{flex:0 0 auto;min-width:38px;min-height:38px;padding:5px;background:#191e20}
+.gb-settings-row{margin:18px 0;padding:14px;background:#191e20;border:1px solid #43524d;border-radius:14px}
+.gb-settings-row strong{display:block;margin-bottom:3px}
+.gb-units-toggle{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin-top:12px}
+.gb-units-toggle button{padding:12px 8px;min-width:0;min-height:44px}
+.gb-units-toggle button[aria-pressed="true"]{background:#92dec3;border-color:#92dec3;color:#fff;font-weight:700}
+.gb-settings-panel .backup{margin:13px 0 0;padding:0;background:transparent;border:0}
+.gb-settings-panel .backup .row.actions{display:grid;grid-template-columns:1fr;gap:9px}
+.gb-settings-panel .backup button,.gb-settings-panel .backup .filebtn{display:block;width:100%;min-width:0;text-align:center;white-space:normal}
+.gb-settings-panel .settings-note{font-size:11px;margin-bottom:0}
+@media(max-width:390px){.gb-header{padding-left:0!important;padding-right:0!important}.gb-settings-panel{right:-2px;width:calc(100vw - 30px);padding:14px}}
+
+
+.gb-settings .backup #exportBtn{display:none!important}
+
+
+/* v25: Settings behaves like a full-height app screen and respects both iPhone safe areas. */
+#gbSettings[open]{
+ position:fixed!important;inset:0!important;z-index:20050!important;
+ width:100vw!important;height:100vh!important;height:100dvh!important;
+ display:block!important;margin:0!important;
+ background:#121819!important;overflow-x:hidden!important;overflow-y:auto!important;
+ overscroll-behavior:contain;-webkit-overflow-scrolling:touch;
+ padding:calc(18px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-left,0px)) calc(28px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-right,0px))!important;
+}
+#gbSettings[open] > .gb-settings-trigger{display:none!important}
+#gbSettings[open] > .gb-settings-panel{
+ position:relative!important;top:auto!important;left:auto!important;right:auto!important;
+ display:block!important;max-width:560px!important;width:100%!important;
+ min-height:0!important;height:auto!important;max-height:none!important;
+ overflow:visible!important;margin:0 auto!important;padding:0 0 14px!important;
+ background:transparent!important;border:0!important;border-radius:0!important;
+ box-shadow:none!important;z-index:auto!important;
+}
+#gbSettings .gb-settings-top{position:sticky;top:0;z-index:2;align-items:center;
+ padding:12px 0 16px;background:#121819;border-bottom:1px solid #43524d}
+#gbSettings .gb-settings-top h2{font-size:clamp(23px,6vw,30px)}
+#gbSettings .gb-settings-close{border-radius:12px;min-height:46px;min-width:46px;touch-action:manipulation}
+#gbSettings .gb-settings-row{margin:22px 0 18px;padding:16px;max-width:100%;min-width:0}
+#gbSettings .gb-units-toggle{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+#gbSettings .gb-units-toggle button{width:100%;min-width:0;touch-action:manipulation;position:relative;z-index:1}
+#gbSettings .backup button,#gbSettings .backup label.filebtn{min-height:47px}
+body:has(#gbSettings[open]){overflow:hidden!important}
+body:has(#gbSettings[open]) .bar.app-dock{display:none!important}
+@media(max-width:390px){#gbSettings[open] > .gb-settings-panel{width:100%!important}#gbSettings .gb-settings-row{padding:14px}}
+
+
+/* Gym Bro v26 — clean workout cards and unobtrusive RIR */
+#workoutLog {padding:clamp(12px,2.8vw,22px)!important}
+#workoutLog .gb-log-helper{font-size:12px;line-height:1.55;color:#a9b8b6;margin:10px 0 14px}
+#workoutLog .gb-log-helper span{color:#92dec3}
+#exerciseList{display:grid;gap:12px;margin-top:20px}
+#exerciseList .ex{background:#121819!important;border:1px solid #263033!important;border-radius:17px!important;padding:14px!important;margin:0!important;min-width:0;box-shadow:0 3px 15px #0002}
+#exerciseList .ex:first-child{border:1px solid #43524d!important}
+#exerciseList .exhead{display:flex!important;align-items:center!important;gap:10px!important;margin-bottom:12px!important;min-width:0}
+#exerciseList .gb-ex-number{display:grid;place-items:center;flex:0 0 30px;height:30px;background:#191e20;border:1px solid #43524d;color:#92dec3;border-radius:9px;font-size:11px;font-weight:850;font-variant-numeric:tabular-nums}
+#exerciseList .gb-ex-title{flex:1;min-width:0}
+#exerciseList .ex h3{font-size:clamp(14px,2.7vw,16px)!important;line-height:1.2!important;margin:0!important;letter-spacing:-.01em!important;overflow-wrap:anywhere}
+#exerciseList .gb-ex-focus{display:block;font-size:11px;color:#a9b8b6;margin-top:4px;line-height:1.3}
+#exerciseList .gb-ex-meta{flex:0 0 auto;max-width:120px;color:#92dec3;font-size:10px;line-height:1.35;text-align:right;background:#191e20;border:1px solid #263033;border-radius:999px;padding:6px 9px;font-weight:650}
+#exerciseList .gb-ex-target{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:9px 11px;border-radius:10px;background:#191e20;border:1px solid #263033;margin-bottom:12px;min-width:0}
+#exerciseList .gb-target-key{font-size:10px;color:#a9b8b6;letter-spacing:.09em;font-weight:750}
+#exerciseList .gb-ex-target strong{color:#92dec3;font-weight:750;font-size:12px;text-align:right}
+#exerciseList .gb-set-grid{display:grid!important;grid-template-columns:22px minmax(0,1fr) minmax(0,1fr) 43px 34px!important;gap:6px!important;align-items:center!important;min-width:0}
+#exerciseList .gb-set-head{padding:0 0 5px!important;margin-bottom:3px;color:#a9b8b6}
+#exerciseList .gb-set-head>*{font-size:10px!important;font-weight:600;text-align:center;white-space:nowrap;color:#a9b8b6}
+#exerciseList .gb-set-head>*:nth-child(2),#exerciseList .gb-set-head>*:nth-child(3){text-align:left;padding-left:6px}
+#exerciseList .gb-set-head abbr{text-decoration:none;border-bottom:1px dotted #a9b8b6;cursor:help}
+#exerciseList .gb-set-grid.setrow{padding:4px 0!important;margin:0!important;border-top:1px solid #191e20}
+#exerciseList .gb-set-number{text-align:center;font-size:12px;color:#a9b8b6;font-weight:750}
+#exerciseList .gb-set-grid.setrow input:not([type=checkbox]){font-size:15px!important;line-height:1!important;width:100%!important;min-width:0!important;height:40px!important;min-height:40px!important;padding:7px 4px!important;border-radius:9px!important;text-align:center!important;background:#121819!important;border:1px solid #43524d!important;box-shadow:none!important;font-variant-numeric:tabular-nums}
+#exerciseList .gb-set-grid.setrow input:not([type=checkbox]):focus{border-color:#92dec3!important;box-shadow:0 0 0 2px rgba(166,100,240,.16)!important}
+#exerciseList .gb-set-grid.setrow .gb-rir-input{height:32px!important;min-height:32px!important;max-height:32px!important;padding:2px 0!important;font-size:12px!important;color:#a9b8b6!important;border-color:#263033!important;background:#121819!important;border-radius:8px!important}
+#exerciseList .gb-set-grid.setrow .gb-rir-input:not(:placeholder-shown){color:#edf4f1!important;border-color:#a9b8b6!important}
+#exerciseList .gb-set-grid.setrow .gb-done-cell{display:flex;justify-content:center;align-items:center;min-width:0}
+#exerciseList .gb-set-grid.setrow input[type=checkbox]{width:20px!important;height:20px!important;min-width:20px;accent-color:#92dec3;cursor:pointer;margin:0}
+#exerciseList .gb-set-grid.setrow.complete{opacity:1!important;background:rgba(155,95,216,.06)!important}
+#exerciseList .gb-ex-footer{border-top:1px solid #263033;margin-top:11px;padding-top:10px;display:grid;gap:8px}
+#exerciseList .gb-ex-quick{display:flex!important;flex-wrap:nowrap!important;gap:6px!important;margin:0!important;min-width:0}
+#exerciseList .gb-ex-quick button{flex:1 1 0!important;min-width:0!important;min-height:34px!important;padding:6px 4px!important;border-radius:9px!important;font-size:11px!important;line-height:1.2!important;background:#191e20!important;border:1px solid #43524d!important;color:#92dec3!important;white-space:nowrap}
+#exerciseList .gb-ex-quick button:disabled{opacity:.45;cursor:not-allowed}
+#exerciseList .gb-ex-detail{border:0!important;padding:0!important;margin:0!important}
+#exerciseList .gb-ex-detail summary{list-style:none;display:flex;align-items:center;justify-content:space-between;min-height:26px;font-size:11px;font-weight:600;color:#a9b8b6;cursor:pointer;user-select:none}
+#exerciseList .gb-ex-detail summary::-webkit-details-marker{display:none}
+#exerciseList .gb-ex-detail summary:after{content:'+';font-size:17px;font-weight:400;color:#92dec3}
+#exerciseList .gb-ex-detail[open] summary:after{content:'–'}
+#exerciseList .gb-ex-detail-body{padding:5px 2px 2px}
+#exerciseList .gb-ex-detail-body p{font-size:12px;line-height:1.5;margin:6px 0!important}
+#exerciseList .gb-ex-detail-body .hint{padding:9px 10px!important;background:#191e20!important;margin:6px 0!important;font-size:12px!important}
+#workoutPlan .gb-plan-outline{border:1px solid #263033;border-radius:12px;padding:0 12px;margin:15px 0}
+#workoutPlan .gb-plan-outline summary{cursor:pointer;padding:13px 0;font-size:13px;color:#edf4f1;font-weight:700}
+#workoutPlan .gb-plan-outline[open] summary{border-bottom:1px solid #263033}
+#workoutPlan .gb-plan-outline .plan-table{margin-top:8px}
+#workoutPlan .gb-plan-outline #planStats{margin:12px 0;color:#a9b8b6}
+@media(max-width:520px){
+  #exerciseList .ex{padding:12px!important}
+  #exerciseList .gb-ex-meta{font-size:10px;max-width:92px;padding:5px 7px}
+  #exerciseList .gb-ex-focus{font-size:10px}
+  #exerciseList .gb-set-grid{grid-template-columns:19px minmax(0,1fr) minmax(0,1fr) 37px 30px!important;gap:4px!important}
+  #exerciseList .gb-set-head>*{font-size:9px!important}
+  #exerciseList .gb-set-grid.setrow input:not([type=checkbox]){font-size:14px!important;height:38px!important;min-height:38px!important}
+  #exerciseList .gb-set-grid.setrow .gb-rir-input{font-size:12px!important;height:30px!important;min-height:30px!important}
+  #exerciseList .gb-set-grid.setrow input[type=checkbox]{width:19px!important;height:19px!important;min-width:19px}
+  #exerciseList .gb-ex-quick button{font-size:10.5px!important}
+}
+@media(min-width:700px){
+  #exerciseList{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+  #exerciseList .ex{padding:16px!important}
+  #exerciseList .gb-exercise-card{align-self:start}
+  #workoutLog .row.spread{gap:18px}
+}
+@media(max-width:350px){
+  #exerciseList .ex{padding:10px!important}
+  #exerciseList .gb-ex-meta{font-size:9px;max-width:76px;padding:4px 5px}
+  #exerciseList .gb-set-grid{grid-template-columns:17px minmax(0,1fr) minmax(0,1fr) 35px 27px!important;gap:3px!important}
+  #exerciseList .gb-set-grid.setrow input:not([type=checkbox]){font-size:13px!important}
+  #exerciseList .gb-set-grid.setrow .gb-rir-input{font-size:11px!important}
+}
+
+
+
+/* v28 — compact, opaque, viewport-fit settings. No underlying page content bleeds through. */
+#gbSettings[open]{
+ position:fixed!important;inset:0!important;z-index:2147483640!important;
+ display:block!important;width:100vw!important;height:100vh!important;height:100dvh!important;
+ margin:0!important;padding:calc(env(safe-area-inset-top,0px) + 10px) max(12px,env(safe-area-inset-right,0px)) calc(env(safe-area-inset-bottom,0px) + 10px) max(12px,env(safe-area-inset-left,0px))!important;
+ background:#121819!important;color:#edf4f1!important;border:0!important;
+ overflow:hidden!important;isolation:isolate!important;
+ box-sizing:border-box!important;
+}
+#gbSettings[open]::before{content:"";position:absolute;inset:0;z-index:-1;background:#121819;pointer-events:none}
+#gbSettings[open] > .gb-settings-trigger{display:none!important}
+#gbSettings[open] > .gb-settings-panel{
+ position:relative!important;inset:auto!important;top:auto!important;left:auto!important;right:auto!important;
+ width:100%!important;max-width:480px!important;height:100%!important;min-height:0!important;max-height:100%!important;
+ margin:0 auto!important;padding:0!important;border:0!important;border-radius:0!important;box-shadow:none!important;
+ background:#121819!important;overflow:hidden!important;
+ display:flex!important;flex-direction:column!important;justify-content:flex-start!important;gap:12px!important;
+ text-align:left!important;box-sizing:border-box!important;
+}
+#gbSettings .gb-settings-top{
+ position:relative!important;top:auto!important;z-index:1!important;flex:0 0 auto!important;
+ padding:4px 0 12px!important;margin:0!important;
+ display:flex!important;align-items:center!important;justify-content:space-between!important;
+ background:#121819!important;border-bottom:1px solid #263033!important;
+}
+#gbSettings .gb-settings-title .section-title{font-size:10px!important;letter-spacing:.16em!important;margin:0 0 3px!important;color:#a9b8b6!important}
+#gbSettings .gb-settings-top h2{font-size:clamp(22px,5vw,27px)!important;line-height:1.15!important;margin:0!important;color:#edf4f1!important}
+#gbSettings .gb-settings-close{display:grid!important;place-items:center!important;width:40px!important;height:40px!important;min-height:40px!important;min-width:40px!important;padding:0!important;border:1px solid #43524d!important;border-radius:12px!important;background:#191e20!important;color:#edf4f1!important;font-size:19px!important}
+#gbSettings .gb-settings-row{
+ display:flex!important;flex-direction:column!important;gap:10px!important;flex:0 0 auto!important;
+ margin:0!important;padding:13px!important;min-width:0!important;max-width:100%!important;
+ border:1px solid #263033!important;border-radius:15px!important;background:#191e20!important;
+}
+#gbSettings .gb-settings-label strong{font-size:14px!important;line-height:1.2!important;margin:0 0 4px!important;color:#edf4f1!important}
+#gbSettings .gb-settings-label .sub{font-size:11px!important;line-height:1.35!important;margin:0!important;color:#a9b8b6!important}
+#gbSettings .gb-units-toggle{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:7px!important;margin:0!important;width:100%!important}
+#gbSettings .gb-units-toggle button{width:100%!important;min-width:0!important;min-height:40px!important;height:40px!important;padding:6px 8px!important;font-size:13px!important;border-radius:10px!important}
+#gbSettings #gbUnitStatus{font-size:11px!important;line-height:1.35!important;margin:0!important;color:#a9b8b6!important}
+#gbSettings .settings-backup{
+ display:flex!important;flex-direction:column!important;flex:0 0 auto!important;gap:10px!important;
+ margin:0!important;padding:13px!important;background:#191e20!important;
+ border:1px solid #263033!important;border-radius:15px!important;min-width:0!important;
+}
+#gbSettings .gb-backup-head h2{margin:0 0 4px!important;color:#edf4f1!important;font-size:14px!important;line-height:1.2!important}
+#gbSettings .gb-backup-head .sub{margin:0!important;font-size:11px!important;line-height:1.35!important;color:#a9b8b6!important}
+#gbSettings .backup .gb-backup-actions{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important;margin:0!important}
+#gbSettings[open] .settings-backup .gb-backup-actions > button:not(#exportBtn),
+#gbSettings[open] .settings-backup .filebtn{
+ display:flex!important;align-items:center!important;justify-content:center!important;
+ width:100%!important;min-width:0!important;min-height:42px!important;height:42px!important;
+ padding:7px 8px!important;text-align:center!important;white-space:nowrap!important;
+ font-size:12px!important;line-height:1.1!important;font-weight:700!important;border-radius:10px!important;
+ box-sizing:border-box!important;cursor:pointer!important;
+}
+#gbSettings .gb-storage-row{display:flex!important;gap:8px!important;align-items:center!important;flex-wrap:wrap!important}
+#gbSettings #protectStorage{width:auto!important;min-height:35px!important;min-width:0!important;padding:6px 10px!important;font-size:11px!important;font-weight:650!important;border-radius:9px!important}
+#gbSettings #storageStatus{font-size:10px!important;line-height:1.25!important;margin:0!important;min-width:0!important}
+#gbSettings .settings-note{flex:0 0 auto!important;margin:0!important;padding:0 3px!important;font-size:10px!important;line-height:1.35!important;color:#a9b8b6!important}
+#gbSettings[open] .settings-backup #exportBtn{display:none!important}
+body:has(#gbSettings[open]){overflow:hidden!important}
+body:has(#gbSettings[open]) .bar.app-dock{display:none!important}
+@media(max-height:610px){
+ #gbSettings[open] > .gb-settings-panel{gap:8px!important}
+ #gbSettings .gb-settings-top{padding:1px 0 8px!important}
+ #gbSettings .gb-settings-row,#gbSettings .settings-backup{gap:7px!important;padding:10px!important}
+ #gbSettings .gb-units-toggle button{min-height:36px!important;height:36px!important}
+ #gbSettings[open] .settings-backup #exportBtn,#gbSettings[open] .settings-backup .filebtn{height:38px!important;min-height:38px!important}
+ #gbSettings .gb-settings-close{width:36px!important;height:36px!important;min-width:36px!important;min-height:36px!important}
+}
+/* Short, landscape viewports: keep every control reachable instead of clipping it. */
+@media(max-height:460px){#gbSettings[open]{overflow-y:auto!important}#gbSettings[open] > .gb-settings-panel{height:auto!important;min-height:100%!important;overflow:visible!important}}
+
+
+/* Gym Bro v30 — editorial dark design system, one final style layer. */
+:root {--bg:#121819;--card:#191e20;--card2:#191e20;--line:#263033;--text:#edf4f1;--muted:#a9b8b6;--accent:#92dec3;--blue:#edf4f1;--warn:#ffcc91; font-synthesis:none;}
+html{scroll-behavior:smooth;scroll-padding-top:86px;background:#121819;overscroll-behavior-y:none}
+body{min-height:100dvh;background:radial-gradient(ellipse 85% 500px at 50% -230px,#263033 0%,transparent 78%),#121819;color:#edf4f1;-webkit-font-smoothing:antialiased;overscroll-behavior-x:none;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Inter",system-ui,sans-serif;line-height:1.48;letter-spacing:-.005em}
+main{width:min(100%,1080px)!important;max-width:1080px!important;margin:auto!important;padding:clamp(10px,2.6vw,24px)!important;padding-bottom:calc(105px + env(safe-area-inset-bottom,0px))!important;min-height:100dvh;}
+.gb-header{min-height:72px!important;margin:0 0 15px!important;padding:5px 4px 16px!important;gap:14px!important;border-bottom:1px solid #263033!important;background:transparent!important;box-shadow:none!important}
+.gb-header-identity{gap:11px!important;min-width:0}.gb-header-mark{width:44px!important;height:44px!important;flex-shrink:0;filter:drop-shadow(0 3px 14px rgba(151,92,232,.12))}.gb-header-mark svg{height:44px!important;width:44px!important}
+.gb-header-name{font-size:22px!important;font-weight:800!important;letter-spacing:-.06em!important;line-height:1.15!important}.gb-header-caption{font-size:9px!important;font-weight:680!important;letter-spacing:.15em!important;color:#a9b8b6!important;margin-top:5px!important}
+.gb-settings-trigger{width:44px!important;height:44px!important;display:flex!important;justify-content:center!important;align-items:center!important;border-radius:14px!important;background:#191e20!important;border:1px solid #43524d!important;touch-action:manipulation}
+.panel{background:linear-gradient(180deg,#191e20 0%,#121819 100%)!important;border:1px solid #263033!important;box-shadow:0 9px 25px rgba(0,0,0,.11)!important;border-radius:21px!important;padding:clamp(15px,2.4vw,23px)!important;margin:0 0 14px!important;overflow:visible}
+h1,h2,h3,h4{color:#edf4f1;letter-spacing:-.035em}h2{font-size:clamp(19px,2.4vw,23px)!important;font-weight:750!important;line-height:1.18!important;margin:5px 0 10px!important}h3{letter-spacing:-.025em}
+.section-title{font-size:10px!important;line-height:1.5!important;text-transform:uppercase!important;letter-spacing:.15em!important;font-weight:760!important;color:#92dec3!important;margin:0!important}
+p,.sub{color:#a9b8b6}p{line-height:1.55} .sub{font-size:13px!important}
+button,.filebtn,.create-plan-summary,summary,select,input{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+button,.filebtn{border-radius:13px!important;min-height:41px!important;padding:10px 15px!important;font-size:13px!important;font-weight:680!important;transition:transform .18s cubic-bezier(.2,.8,.3,1),background-color .18s ease,border-color .18s ease,box-shadow .18s ease!important;}
+button:not(:disabled):active,.create-plan-summary:active,.dock-tab:active{transform:scale(.975)!important}
+button:not(:disabled):hover{border-color:#92dec3;background:#263033}
+button.primary{background:linear-gradient(110deg,#92dec3,#92dec3)!important;color:#fff!important;border:1px solid #92dec3!important;box-shadow:inset 0 1px 0 #ffffff24,0 5px 20px #92dec325!important}
+button.primary:not(:disabled):hover{background:linear-gradient(110deg,#92dec3,#92dec3)!important;box-shadow:0 6px 25px #92dec335!important}
+button:disabled{opacity:.43!important;cursor:not-allowed;transform:none!important}
+:is(button,summary,a,input,select,.filebtn):focus-visible{outline:2px solid #92dec3!important;outline-offset:3px!important}
+input:not([type=checkbox]),select,textarea{background:#121819!important;border:1px solid #43524d!important;color:#edf4f1!important;border-radius:12px!important;box-shadow:none!important;min-width:0!important;max-width:100%!important;font-size:16px!important;line-height:1.25!important;transition:border-color .16s ease,box-shadow .16s ease!important;}
+input:not([type=checkbox]):focus,select:focus,textarea:focus{border-color:#92dec3!important;box-shadow:0 0 0 3px #92dec322!important;outline:none!important}
+input[type=checkbox]{accent-color:#92dec3!important;cursor:pointer!important}
+label{color:#a9b8b6;min-width:0}
+.plan-manager>.sub{font-size:13px!important;line-height:1.5!important;margin:3px 0 15px!important;max-width:65ch}
+.plan-pick-grid{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))!important;gap:9px!important;margin:0 0 12px!important;}
+.plan-choice{border-radius:15px!important;min-height:74px!important;background:#191e20!important;box-shadow:none!important;padding:13px!important;text-align:left!important;display:grid!important;grid-template-columns:1fr auto!important;grid-template-rows:auto auto!important;align-items:center!important;column-gap:8px!important}
+.plan-choice.is-selected{border-color:#92dec3!important;background:#263033!important;box-shadow:inset 0 0 0 1px #92dec333!important}
+.plan-choice-name{font-size:14px!important;font-weight:730!important;line-height:1.2!important;grid-column:1!important;grid-row:1!important}
+.plan-choice-meta{font-size:10px!important;line-height:1.4!important;color:#a9b8b6!important;grid-column:1!important;grid-row:2!important}
+.plan-choice-check{grid-column:2!important;grid-row:1 / span 2!important;justify-self:center!important;border-radius:99px!important}
+.switch-plan-select{margin:8px 0 12px!important}.plan-pick-grid:has(.plan-choice:only-child) + .switch-plan-select{display:none!important}
+.plan-buttons{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:9px!important;align-items:stretch!important;}
+.plan-buttons>#editPlanBtn,.plan-buttons>#deletePlanBtn{width:100%!important;min-width:0!important;margin:0!important}
+.plan-buttons>#planBuilder{grid-column:1 / -1!important;min-width:0}
+.plan-builder[open]{background:transparent!important;border:0!important;box-shadow:none!important;padding:0!important}
+.create-plan-summary{display:flex!important;align-items:center!important;justify-content:center!important;font-size:14px!important;font-weight:750!important;min-height:48px!important;background:#92dec3!important;color:#fff!important;border:1px solid #92dec3!important;border-radius:14px!important}
+.plan-builder-content{margin:10px 0 0!important;padding:14px!important;border:1px solid #43524d!important;border-radius:16px!important;background:#121819!important}
+.builder-step{border:1px solid #43524d!important;border-radius:15px!important;background:#191e20!important;padding:13px!important;margin:10px 0!important;box-shadow:none!important}
+.builder-step-label{color:#92dec3!important;font-size:10px!important;letter-spacing:.13em!important}
+.builder-native-select{min-height:45px!important}.builder-block-label input{min-height:44px!important}
+.builder-heading{gap:8px!important}.builder-step-head{flex-wrap:wrap!important;gap:8px}
+#workoutPlan .plan-table{width:100%!important;table-layout:auto!important}#workoutPlan .plan-table td,#workoutPlan .plan-table th{padding:10px 5px!important;font-size:12px!important;overflow-wrap:anywhere}
+#workoutLog{padding:clamp(13px,2.5vw,22px)!important}
+#workoutLog .row.spread{gap:10px!important;align-items:flex-start!important;flex-wrap:wrap!important}
+#workoutLog #sessionHeading{min-width:0!important;overflow-wrap:anywhere!important;font-size:clamp(18px,2.5vw,23px)!important;line-height:1.2!important}
+#workoutLog input[type=date]{max-width:100%!important;min-height:42px!important}
+.gb-log-helper{font-size:12px!important;line-height:1.5!important;color:#a9b8b6!important}
+.gb-exercise-card{border:1px solid #263033!important;background:#121819!important;border-radius:17px!important;padding:clamp(11px,1.9vw,17px)!important;margin:10px 0!important;box-shadow:none!important;transition:border-color .2s ease,background-color .2s ease!important}
+.gb-exercise-card:hover{border-color:#43524d!important}
+.gb-exercise-header{gap:8px!important;align-items:center!important;flex-wrap:wrap!important}
+.gb-ex-number{flex-shrink:0!important;color:#92dec3!important;background:#263033!important;border:1px solid #43524d!important;border-radius:10px!important;font-size:11px!important;padding:7px!important;min-width:31px!important;text-align:center}
+.gb-ex-title{min-width:0!important;flex:1 1 130px!important}.gb-ex-title h3{font-size:15px!important;line-height:1.3!important;margin:0!important;font-weight:760!important}
+.gb-ex-focus{font-size:11px!important;color:#a9b8b6!important;line-height:1.25!important}
+.gb-ex-meta{font-size:10px!important;color:#a9b8b6!important;font-weight:650!important;background:#191e20!important;padding:5px 8px!important;border-radius:20px!important;white-space:nowrap!important}
+.gb-ex-target{background:#191e20!important;border:1px solid #263033!important;border-radius:11px!important;margin:12px 0 9px!important;padding:9px 11px!important;min-height:0!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:8px!important}
+.gb-target-key{font-size:10px!important;font-weight:700!important;letter-spacing:.10em!important;color:#92dec3!important}
+.gb-ex-target strong{font-size:13px!important;color:#edf4f1!important;text-align:right!important}
+#exerciseList .gb-set-grid.has-rir{display:grid!important;grid-template-columns:minmax(17px,.28fr) minmax(62px,1.35fr) minmax(55px,.95fr) minmax(41px,.61fr) minmax(25px,.42fr)!important;column-gap:clamp(4px,.9vw,8px)!important;width:100%!important;align-items:center!important}
+#exerciseList .gb-set-grid.has-rir>*,#exerciseList .gb-set-grid.has-rir input{min-width:0!important;max-width:100%!important;}
+#exerciseList .gb-set-head{font-size:10px!important;letter-spacing:.01em!important;color:#a9b8b6!important}
+#exerciseList .setrow{margin-top:7px!important;min-height:42px!important}
+#exerciseList .setrow input[type=number]{width:100%!important;padding:9px 5px!important;min-height:40px!important;border-radius:9px!important;text-align:center!important;font-size:14px!important;font-variant-numeric:tabular-nums!important}
+#exerciseList .gb-rir-input{font-size:13px!important;opacity:.82!important;background:#121819!important;border-color:#263033!important}
+#exerciseList .setrow.complete{opacity:1!important;background:#26303333!important;border-radius:9px!important}
+#exerciseList .gb-done-cell{display:flex;justify-content:center;align-items:center;margin:0!important}
+#exerciseList .gb-done-cell input{width:19px!important;height:19px!important;flex-shrink:0!important}
+#exerciseList .gb-set-number{color:#a9b8b6!important;font-variant-numeric:tabular-nums!important;font-size:12px!important}
+.gb-ex-footer{border-top:1px solid #263033!important;margin-top:11px!important;padding-top:10px!important}
+.gb-ex-quick{display:flex!important;flex-wrap:wrap!important;gap:7px!important}.gb-ex-quick button{min-height:36px!important;padding:7px 9px!important;font-size:11px!important;flex:1 1 auto!important}
+.gb-ex-detail{border:0!important;margin:8px 0 0!important}.gb-ex-detail summary{color:#a9b8b6!important;font-size:12px!important}
+.workout-save-zone{display:grid!important;grid-template-columns:1fr!important;gap:9px!important;margin-top:20px!important}
+.workout-save-zone button{width:100%!important;min-height:47px!important}
+.workout-save-zone button.secondary{background:transparent!important;color:#a9b8b6!important;min-height:42px!important}
+#trackingView .gb23-kpis{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}
+.gb23-kpi,.tile{background:#191e20!important;border:1px solid #263033!important;border-radius:14px!important;padding:13px!important;min-width:0!important;box-shadow:none!important}
+.gb23-kpi strong,.stat{font-size:clamp(20px,3vw,27px)!important;letter-spacing:-.04em!important;font-variant-numeric:tabular-nums!important}
+.gb23-kpi span,.tile span{font-size:11px!important;color:#a9b8b6!important;line-height:1.3!important}
+.gb23-kpi small{font-size:10px!important;color:#a9b8b6!important}
+.weight-fields,.target-row{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr))!important;gap:11px!important;align-items:end!important}
+.weight-fields input,.weight-fields button{width:100%!important;min-height:45px!important}
+#trackingView svg{max-width:100%!important;height:auto!important;display:block!important}
+#trackingView .panel button{max-width:100%!important}
+.gb23-item{gap:8px!important;min-width:0!important}.gb23-item p{min-width:0!important;overflow-wrap:anywhere!important}
+.gb-settings-panel{box-shadow:none!important;background:#121819!important}
+#gbSettings[open]{background:#121819!important;backdrop-filter:none!important}
+#gbSettings[open] .gb-settings-panel{background:#121819!important}
+#gbSettings[open] .gb-settings-top{background:#121819!important}
+#gbSettings[open] .backup{background:#191e20!important}
+#gbSettings[open] input,#gbSettings[open] button{max-width:100%!important}
+.app-dock{background:rgba(20,15,28,.96)!important;box-shadow:0 -6px 30px rgba(0,0,0,.25)!important;border:1px solid #43524d!important;border-bottom:0!important;backdrop-filter:blur(18px)!important;-webkit-backdrop-filter:blur(18px)!important}
+.app-dock .dock-tab{transition:background-color .18s ease,color .18s ease,transform .18s ease!important;border-radius:14px!important}
+.app-dock .dock-tab[aria-current=page],.app-dock .dock-tab.active{background:#263033!important;color:#edf4f1!important}
+#toast{z-index:999999!important;max-width:min(90vw,420px)!important;left:50%!important;transform:translateX(-50%);border:1px solid #a9b8b6!important;border-radius:13px!important;box-shadow:0 12px 30px #0008!important}
+.gb-preview-note{background:#263033;border:1px solid #92dec3;border-radius:13px;padding:10px 13px;margin:9px 0 14px;color:#edf4f1;font-size:12px;line-height:1.45}
+#workoutView,#trackingView{animation:gb-enter .25s cubic-bezier(.23,.78,.3,1) both}
+@keyframes gb-enter{from{opacity:.4;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+@media(min-width:780px){main{padding:20px 25px 110px!important}.panel{padding:23px!important}#trackingView .gb23-kpis{grid-template-columns:repeat(4,minmax(0,1fr))!important}#exerciseList{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:14px!important}#exerciseList .gb-exercise-card{margin:0!important}.gb-ex-title h3{font-size:16px!important}}
+@media(max-width:380px){main{padding-left:11px!important;padding-right:11px!important}.gb-header{padding-left:1px!important;padding-right:1px!important}.panel{padding:13px!important;border-radius:18px!important}.gb-exercise-card{padding:10px!important}.gb-ex-meta{font-size:9px!important}#exerciseList .gb-set-grid.has-rir{grid-template-columns:16px minmax(57px,1.25fr) minmax(48px,.95fr) minmax(38px,.64fr) 24px!important;gap:4px!important}#exerciseList .setrow input[type=number]{padding-left:3px!important;padding-right:3px!important;font-size:13px!important}.gb-ex-quick button{font-size:10px!important}.gb-header-name{font-size:20px!important}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* v30 · unified interaction / layout finish — no change to workout data */
+:root{--gb-ease:cubic-bezier(.2,.8,.25,1);--gb-fast:160ms;--gb-base:240ms}
+html,body{max-width:100%;min-width:0}
+main{overflow-x:clip;min-width:0}
+:where(.panel,.tile,.gb23-kpi,.gb23-review-box,.gb23-item,.gb-exercise-card,.gb-ex-title,.gb-header-type,.gb-plan-outline,.builder-step,.gb-ach-card,.gb-ach-main){min-width:0;max-width:100%}
+:where(h1,h2,h3,h4,p,.stat,.gb23-kpi strong,.gb-header-name,.gb-ex-title h3,.plan-choice-name,.tile span,.gb23-kpi span,.gb23-item,.gb23-muscle-top,.gb23-review-box p){overflow-wrap:anywhere;word-break:normal}
+:where(.stat,.gb23-kpi strong){line-height:1.13!important;font-variant-numeric:tabular-nums;letter-spacing:-.035em;max-width:100%;font-size:clamp(17px,3.5vw,25px)!important}
+:where(button,a,input,select,summary,.filebtn){-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+:where(button,.filebtn,.plan-choice,.dock-tab,.gb-settings-trigger,.create-plan-summary){transition:background-color var(--gb-fast) ease,border-color var(--gb-fast) ease,color var(--gb-fast) ease,box-shadow var(--gb-base) ease,opacity var(--gb-fast) ease!important;will-change:auto!important}
+:where(button,a,summary,input,select,.filebtn):focus-visible{outline:2px solid #92dec3!important;outline-offset:3px!important}
+button:active:not(:disabled),.plan-choice:active,.dock-tab:active{filter:brightness(1.09)}
+/* Unit switch: distinct explicit color states, not inherited hover/focus rules. */
+#gbSettings .gb-units-toggle{background:#121819!important;padding:4px!important;border:1px solid #263033!important;border-radius:14px!important;gap:4px!important}
+#gbSettings .gb-units-toggle button{appearance:none!important;box-shadow:none!important;background:transparent!important;color:#a9b8b6!important;border:1px solid transparent!important;font-weight:650!important;outline-offset:1px!important;transition:background-color 170ms ease,color 170ms ease,border-color 170ms ease!important}
+#gbSettings .gb-units-toggle button[aria-pressed="true"]{background:#92dec3!important;color:#fff!important;border-color:#92dec3!important;box-shadow:0 1px 7px #92dec32a!important}
+#gbSettings .gb-units-toggle button[aria-pressed="false"]:hover{background:#191e20!important;color:#edf4f1!important;border-color:#263033!important}
+#gbSettings .gb-units-toggle button:active{filter:none!important}
+#gbSettings .gb-settings-panel,#gbSettings .settings-backup,#gbSettings .gb-settings-row{background-color:#121819!important}
+#gbSettings .gb-settings-row,#gbSettings .settings-backup{background-color:#191e20!important}
+/* One consistent motion language: view transitions shouldn't replay on every data update. */
+#workoutView,#trackingView{animation:none!important;transform:none!important}
+.gb-settings-panel{animation:none!important}
+.gb-exercise-card,.gb23-photo,.tile,.gb23-kpi{animation:none!important;transform:none!important}
+/* Layout polish on small devices */
+.gb-header,.gb-header-identity{min-width:0;max-width:100%}
+#trackingView .chart-header>*{min-width:0;max-width:100%}
+#trackingView .gb23-fields>label,#trackingView .weight-fields>label{min-width:0}
+#trackingView :where(input,select){max-width:100%;min-width:0}
+#trainingCalendar{min-width:0}
+#advanced .grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+#advanced .grid .tile{padding:clamp(7px,2.6vw,13px)!important}
+#advanced .grid .tile span{line-height:1.25!important;font-size:clamp(9px,2.5vw,11px)!important}
+#advanced .grid .stat{font-size:clamp(14px,3.2vw,24px)!important}
+/* Upgradeable achievement tracks */
+.gb-ach-heading{display:flex;justify-content:space-between;align-items:center;gap:13px;margin:25px 0 12px;min-width:0}
+.gb-ach-heading h3{font-size:18px;margin:2px 0 3px;letter-spacing:-.025em}
+.gb-ach-heading .gb-ach-sub{font-size:12px;line-height:1.45;margin:0;max-width:420px}
+.gb-ach-count{padding:7px 11px;border-radius:999px;border:1px solid #43524d;background:#191e20;color:#edf4f1;white-space:nowrap;font-size:12px;font-weight:750;flex:none}
+.gb-ach-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;min-width:0}
+.gb-ach-card{border:1px solid #43524d;border-radius:16px;background:#191e20;padding:12px;min-height:130px;display:flex;flex-direction:column;gap:10px;contain:layout paint}
+.gb-ach-card.is-earned{background:linear-gradient(140deg,#191e20,#191e20 65%);border-color:#43524d}
+.gb-ach-card .gb-ach-top{display:flex;align-items:center;gap:9px;min-width:0}
+.gb-ach-icon{display:grid;place-items:center;width:35px;height:35px;min-width:35px;border:1px solid #43524d;border-radius:11px;background:#263033;font-size:17px}
+.gb-ach-card:not(.is-earned) .gb-ach-icon{filter:grayscale(.45);opacity:.7}
+.gb-ach-main{flex:1;min-width:0;overflow-wrap:anywhere}
+.gb-ach-name{overflow-wrap:anywhere;font-size:13px;color:#edf4f1;font-weight:750;line-height:1.2;margin:0 0 2px}
+.gb-ach-rank{color:#92dec3;font-size:10px;font-weight:600;line-height:1.2}
+.gb-ach-meter{height:6px;background:#263033;border-radius:9px;overflow:hidden}
+.gb-ach-meter>span{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,#92dec3,#92dec3);transition:width .4s var(--gb-ease)}
+.gb-ach-next{display:flex;align-items:baseline;justify-content:space-between;gap:7px;font-size:11px;color:#a9b8b6;line-height:1.3;min-width:0}
+.gb-ach-next span{min-width:0;overflow-wrap:anywhere}
+.gb-ach-next b{flex:none;color:#edf4f1;font-variant-numeric:tabular-nums}
+.gb-ach-tiers{margin:0;padding:7px 0 0;border-top:1px solid #263033}
+.gb-ach-tiers summary{cursor:pointer;color:#a9b8b6;font-size:11px;list-style:none}
+.gb-ach-tiers summary::-webkit-details-marker{display:none}
+.gb-ach-tiers summary::after{content:'  ▾'}
+.gb-ach-tier-list{display:grid;gap:4px;padding-top:7px}
+.gb-ach-tier{display:flex;justify-content:space-between;gap:8px;font-size:10px;color:#a9b8b6}
+.gb-ach-tier.complete{color:#92dec3}
+@media(max-width:370px){.gb-ach-grid{gap:7px}.gb-ach-card{padding:10px}.gb-ach-icon{width:29px;min-width:29px;height:29px;font-size:14px}.gb-ach-name{font-size:11px}.gb-ach-next{font-size:10px}.gb-ach-count{padding:6px 8px}}
+@media(min-width:750px){.gb-ach-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+/* Lightweight milestone celebration, nonblocking and accessible. */
+#gb-ach-toast[hidden]{display:none!important}
+#gb-ach-toast{position:fixed;z-index:2147483635;left:50%;bottom:calc(89px + env(safe-area-inset-bottom,0px));width:min(440px,calc(100vw - 24px));background:linear-gradient(132deg,#263033,#191e20);border:1px solid #92dec3;border-radius:18px;box-shadow:0 16px 50px #000b,0 0 28px #92dec322;color:#edf4f1;padding:15px 40px 15px 15px;transform:translateX(-50%);animation:gb-ach-in .36s var(--gb-ease) both;overflow:hidden}
+#gb-ach-toast .gb-ach-kicker{font-size:10px;font-weight:800;letter-spacing:.16em;color:#92dec3;text-transform:uppercase;margin:0 0 4px}
+#gb-ach-toast strong{font-size:16px;line-height:1.25;display:block;position:relative}
+#gb-ach-toast p{font-size:12px;line-height:1.4;margin:5px 0 0;color:#92dec3}
+#gb-ach-toast button{position:absolute;top:8px;right:8px;width:31px;height:31px;min-height:31px;padding:4px;display:grid;place-items:center;font-size:19px;border:0;background:transparent;color:#edf4f1;z-index:2}
+#gb-ach-toast .gb-ach-spark{position:absolute;pointer-events:none;border-radius:2px;width:5px;height:11px;background:#92dec3;opacity:0;top:14px;left:var(--x);transform:rotate(var(--r));animation:gb-ach-spark .8s var(--gb-ease) .12s forwards}
+@keyframes gb-ach-in{from{opacity:0;transform:translate(-50%,14px) scale(.98)}to{opacity:1;transform:translate(-50%,0) scale(1)}}
+@keyframes gb-ach-spark{0%{opacity:0;transform:translateY(-6px) rotate(var(--r))}30%{opacity:.9}100%{opacity:0;transform:translateY(62px) rotate(calc(var(--r) + 65deg))}}
+@media(prefers-reduced-motion:reduce){#gb-ach-toast,.gb-ach-spark{animation:none!important}.gb-ach-meter>span{transition:none!important}}
+
+
+
+
+/* Gym Bro v32 — cross-device adaptive layout: CSS-only presentation, no data changes. */
+:root { --gb-dock-height: 80px; --gb-side-pad: clamp(12px, 3.2vw, 26px); }
+html { -webkit-text-size-adjust:100%; text-size-adjust:100%; width:100%; overflow-x:clip; }
+body { width:100%; min-width:0; overflow-x:clip; }
+main { width:100%!important; max-width:920px!important; min-width:0!important; margin-inline:auto!important;
+  padding-inline:max(var(--gb-side-pad), env(safe-area-inset-left,0px), env(safe-area-inset-right,0px))!important;
+  padding-bottom:calc(var(--gb-dock-height) + 24px)!important; }
+#workoutView,#trackingView,#workoutLog,#workoutPlan,#exerciseList,.plan-manager,
+.panel,.gb-exercise-card,.gb-ex-target,.builder-step,.gb-settings-panel,.gb23-fields,.gb23-kpi,.tile,
+.gb-ach-card { min-width:0!important; max-width:100%!important; }
+/* Avoid inadvertent cut-off on 280–430px screens and system enlarged text. */
+:where(.panel,.gb-exercise-card,.gb-ex-target,.gb23-item,.gb23-kpi,.gb23-review-box,.builder-step,.gb-ach-card) :where(h2,h3,h4,p,span,label,small,strong,button,summary) { overflow-wrap:anywhere; }
+:where(.gb-header-type,.gb-header-identity,.gb-header-name,.gb-ex-title,.plan-choice-name,.builder-heading,.gb23-item,.gb-ach-main) { min-width:0!important; }
+:where(.chart-holder,.gb23-photo,.gb23-photo-grid,.gb23-photo-compare) { max-width:100%; min-width:0; }
+#trackingView svg,.chart-holder svg { display:block; max-width:100%; width:100%; height:auto; }
+/* Predictable touch inputs: 16px prevents automatic Safari zoom on focus. */
+@media (pointer:coarse) {
+  input:not([type=checkbox]):not([type=file]), select, textarea,
+  #exerciseList .setrow input[type=number], #exerciseList .gb-rir-input,
+  #planBuilder input, #planBuilder select { font-size:16px!important; }
+  button,.filebtn,summary,.dock-tab { touch-action:manipulation; }
+  #exerciseList .gb-done-cell { min-height:44px!important; cursor:pointer; }
+  #exerciseList .gb-set-grid.setrow { min-height:46px!important; }
+}
+/* Bottom dock is pinned to the physical viewport edge, including safe-area insets. */
+.bar.app-dock { position:fixed!important; inset:auto 0 0 0!important; bottom:0!important;
+  left:0!important;right:0!important;transform:none!important; width:100%!important;
+  min-width:0!important;max-width:none!important;margin:0!important;
+  border-radius:17px 17px 0 0!important;
+  padding:7px max(12px, env(safe-area-inset-right,0px)) calc(7px + env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px))!important;
+  box-sizing:border-box!important;z-index:1000!important; }
+.bar.app-dock .dock-inner { width:100%!important; max-width:500px!important; margin-inline:auto!important;
+  display:grid!important; grid-template-columns:repeat(2,minmax(0,1fr))!important; gap:8px!important; }
+.bar.app-dock .dock-tab { min-width:0!important;min-height:52px!important;display:flex!important;
+  align-items:center!important;justify-content:center!important;gap:4px!important;box-sizing:border-box!important;
+  text-decoration:none!important;line-height:1.15!important; }
+.bar.app-dock .dock-tab:focus-visible { outline-offset:-3px!important; }
+/* Reachable controls with a software keyboard; never overlay the focused row. */
+body.gb-keyboard-open .bar.app-dock { pointer-events:none!important; opacity:0!important; visibility:hidden!important; }
+body.gb-keyboard-open main { padding-bottom:32px!important; }
+/* Responsive plan controls and exercise logging with constrained columns. */
+#exerciseList .gb-exercise-card { width:100%!important; }
+#exerciseList .gb-set-grid.has-rir { grid-template-columns:minmax(16px,.27fr) minmax(0,1.38fr) minmax(0,1fr) minmax(0,.72fr) minmax(26px,.43fr)!important;
+  column-gap:clamp(4px,.95vw,9px)!important; width:100%!important; }
+#exerciseList .gb-set-grid.has-rir > * { min-width:0!important; }
+#exerciseList .gb-set-grid.setrow input:not([type=checkbox]) { width:100%!important;box-sizing:border-box!important; }
+#exerciseList .gb-done-cell { min-width:0; display:flex; align-items:center;justify-content:center; }
+#exerciseList .gb-set-head { min-height:22px!important; }
+input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button { -webkit-appearance:none;margin:0; }
+input[type=number] { appearance:textfield; -moz-appearance:textfield; }
+#workoutLog .row.spread { display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,190px)!important;gap:12px!important;align-items:end!important; }
+#workoutLog label:has(#sessionDate) { width:100%!important;max-width:100%!important; }
+#sessionDate { width:100%!important;min-width:0!important;max-width:100%!important; }
+.plan-buttons { grid-template-columns:repeat(2,minmax(0,1fr))!important; }
+.plan-pick-grid { grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))!important; }
+.plan-choice,.builder-step,.builder-block-label,.plan-builder-content { min-width:0!important; }
+#workoutPlan .plan-table { width:100%!important;table-layout:fixed!important; }
+#workoutPlan .plan-table :is(th,td) { overflow-wrap:anywhere!important;word-break:normal!important; }
+#workoutPlan .plan-table th:first-child { width:48%; }
+#workoutPlan .plan-table th:nth-child(2) { width:29%; }
+#workoutPlan .plan-table th:nth-child(3) { width:23%; }
+/* Tracking cards and charts stay inside the available width. */
+#trackingView .gb23-fields, #trackingView .weight-fields, #trackingView .target-row { min-width:0!important; }
+#trackingView :is(input,select,textarea,.chart-holder,.gb23-kpi,.gb23-photo,.gb23-review-box) { max-width:100%!important;min-width:0!important; }
+.gb23-item { min-width:0; flex-wrap:wrap; }
+.gb23-item-actions { flex-wrap:wrap; }
+.gb23-photo-grid img,.gb23-photo-compare img { max-width:100%; }
+/* Closed settings must not occupy space or intercept taps. */
+#gbSettings:not([open]) > .gb-settings-panel { display:none!important; }
+/* Settings: opaque full-viewport surface, scrollable only on very short or enlarged displays. */
+#gbSettings[open] { position:fixed!important;inset:0!important; width:100%!important;height:100dvh!important;
+  padding:calc(10px + env(safe-area-inset-top,0px)) max(12px,env(safe-area-inset-right,0px))
+          calc(10px + env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px))!important;
+  overflow-x:hidden!important;overflow-y:auto!important;overscroll-behavior:contain!important;
+  background:#121819!important; }
+#gbSettings[open] > .gb-settings-panel { min-height:100%!important;height:auto!important;max-height:none!important;
+  overflow:visible!important;width:100%!important;max-width:480px!important;margin:0 auto!important; }
+#gbSettings .gb-settings-top { position:sticky!important;top:0!important;background:#121819!important;
+  z-index:3!important;padding-block:4px 10px!important; }
+#gbSettings .gb-units-toggle { grid-template-columns:repeat(2,minmax(0,1fr))!important; }
+#gbSettings .gb-units-toggle button { min-width:0!important; }
+#gbSettings .gb-backup-actions { display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important; }
+#gbSettings .gb-backup-actions > * { min-width:0!important;max-width:100%!important;white-space:normal!important; }
+/* Compact phones, foldables and system text scaling. */
+@media(max-width:420px) {
+ main{padding-inline:max(12px,env(safe-area-inset-left,0px),env(safe-area-inset-right,0px))!important;}
+ .panel{padding:clamp(12px,3.3vw,16px)!important;}
+ #workoutLog .row.spread{grid-template-columns:minmax(0,1fr)!important;}
+ .builder-fields{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+ .gb23-fields{grid-template-columns:repeat(2,minmax(0,1fr));}
+ .gb23-photo-grid,.gb23-photo-compare{gap:8px;}
+ .bar.app-dock .dock-inner{gap:7px!important;}
+}
+@media(max-width:340px) {
+ .gb-header-caption{letter-spacing:.06em!important;font-size:8px!important;}
+ .gb-header-name{font-size:19px!important;}
+ #exerciseList .gb-exercise-card{padding:9px!important;}
+ #exerciseList .gb-set-grid.has-rir{grid-template-columns:16px minmax(0,1.3fr) minmax(0,.96fr) minmax(0,.7fr) 24px!important;gap:4px!important;}
+ #exerciseList .gb-set-grid.setrow input:not([type=checkbox]){padding-inline:2px!important;}
+ #exerciseList .gb-set-head{font-size:9px!important;}
+ .gb-ach-grid{grid-template-columns:1fr!important;}
+ .gb23-kpis{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+ .gb23-photo-grid,.gb23-photo-compare{grid-template-columns:1fr!important;}
+ .gb23-photo-compare img{height:auto;max-height:330px;object-fit:contain;}
+}
+/* Short screens and landscape phones: prioritize reachable content over forced no-scroll. */
+@media(max-height:560px) {
+ #gbSettings[open] > .gb-settings-panel{min-height:0!important;}
+ #gbSettings .gb-settings-row,#gbSettings .settings-backup{padding:10px!important;gap:7px!important;}
+ #gbSettings .gb-settings-panel{gap:8px!important;}
+ .bar.app-dock .dock-tab{min-height:44px!important;flex-direction:row!important;}
+}
+@media(min-width:600px) and (max-height:530px) {
+ #exerciseList{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+ .gb23-photo-grid,.gb23-photo-compare{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+}
+/* High-text-size accessibility: prefer wrapping rather than clipping. */
+@media(max-width:460px) {
+ .gb-exercise-header,.gb-ex-quick,.builder-step-head,.chart-header,.gb23-divider{min-width:0!important;}
+ .gb-ex-quick button,.plan-buttons button,.gb-settings-panel button{white-space:normal!important;}
+}
+/* Restrict expensive motion; no movement on layout refresh, and respect user preferences. */
+@media(hover:none){.gb-exercise-card:hover,.tile:hover,.gb23-kpi:hover{transform:none!important;}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important} *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;}}
+

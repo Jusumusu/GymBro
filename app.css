@@ -144,3 +144,58 @@ input::placeholder,textarea::placeholder { color: #8faaa0!important; opacity: 1;
 .gb-ach-icon,.gb-ach-card.is-earned .gb-ach-icon { background: #263b32!important; border-color: #465c50!important; }
 .gb-ach-meter { background: #34453b!important; }.gb-ach-meter>span { background: var(--accent)!important; }
 .gb-ach-card .gb-ach-rank,.gb-ach-card .gb-ach-tiers summary { color: #b9d9c8!important; }
+
+/* v34 component tokens and interaction states. Layout rules live in layout.css. */
+:root {
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
+  --space-5: 24px; --space-6: 32px;
+  --radius-control: 10px; --radius-card: 16px;
+  --success: #92dec3; --error: #f3b6b6; --error-bg: #3c2428;
+}
+.skip-link { position: fixed; top: -80px; left: 16px; z-index: 100000; padding: 12px 18px; background: var(--accent); color: #102b21; border-radius: var(--radius-control); }
+.skip-link:focus { top: 12px; }
+#exerciseList .gb-done-cell { min-width: 32px; min-height: 44px; }
+#exerciseList .gb-done-cell input { width: 28px!important; height: 28px!important; margin: 8px; }
+#exerciseList .setrow { border-radius: 8px; border-left: 2px solid transparent; padding-block: 2px; }
+#exerciseList .setrow:focus-within { background: #92dec30a!important; border-left-color: var(--accent); }
+#exerciseList .setrow.complete { background: #92dec312!important; border-left-color: var(--accent); }
+#exerciseList .setrow.complete .gb-set-number { color: var(--accent)!important; font-weight: 700; }
+#exerciseList .setrow.complete input[type=number] { border-color: #527565!important; }
+#exerciseList input[aria-invalid=true] { border-color: var(--error)!important; }
+#exerciseList .gb-exercise-header { display: grid!important; grid-template-columns: 32px minmax(0,1fr) auto; text-align: left!important; }
+#exerciseList .gb-ex-title { text-align: left!important; }
+#exerciseList .gb-ex-target { margin-block: 16px!important; }
+#planBuilder .builder-step-controls { display: flex; gap: 6px; flex-shrink: 0; }
+#planBuilder .builder-step-controls button { min-width: 44px; width: auto!important; white-space: nowrap!important; }
+#planBuilder .builder-remove { min-width: 72px!important; }
+#planBuilder .builder-step-head { align-items: center; }
+#planBuilder .plan-builder-content { padding: 16px!important; }
+#planBuilder .builder-count { background: #263b32!important; border-color: #465c50!important; color: var(--muted)!important; }
+#gbSettings .filebtn { display: flex; align-items: center; justify-content: center; cursor: pointer; }
+#gbSettings .filebtn:focus-within { outline: 2px solid var(--accent); outline-offset: 3px; }
+#gbSettings .filebtn input[type=file] { display: block!important; position: absolute; opacity: 0; width: 1px; height: 1px; min-height: 0; padding: 0!important; }
+#toast[data-tone=error] { background: var(--error-bg)!important; color: #ffe1e1!important; border-color: #ad6f77!important; }
+#toast[data-tone=success] { background: #263d33!important; }
+#toast { pointer-events: none; }
+.chart-holder svg line { stroke: #34433e; }
+.chart-holder svg :is(path,polyline)[stroke='#bc83ff'],.chart-holder svg :is(path,polyline)[stroke='#b78bf1'] { stroke: var(--accent); }
+.chart-holder svg circle[fill='#bc83ff'] { fill: var(--accent); stroke: var(--card); }
+.gb23-track { background: #34433e!important; }.gb23-track>div { background: var(--accent)!important; }
+.calendar-day.hit { background: #284d3b!important; border-color: #527565!important; color: #c9f2df!important; }
+.gb-ach-tier.complete { color: var(--accent)!important; }
+@media(max-width:600px) {
+ #exerciseList .gb-exercise-header { grid-template-columns: 32px minmax(0,1fr); }
+ #exerciseList .gb-ex-meta { grid-column: 2; justify-self: start; margin-top: 2px; }
+ #exerciseList .gb-set-grid.has-rir { grid-template-columns: 20px minmax(0,1.15fr) minmax(0,.85fr) minmax(0,.7fr) 40px!important; gap: 5px!important; }
+ #exerciseList .gb-done-cell input { margin: 6px!important; }
+ #planBuilder .builder-step-controls { flex-wrap: wrap; justify-content: flex-end; }
+}
+#exerciseList .setrow input[type=number] { min-height: 44px!important; height: 44px!important; }
+.section-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin: 4px 0; }
+.section-heading h2 { margin: 0!important; }
+.workout-jump { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; color: var(--accent); font-size: 13px; font-weight: 650; text-decoration: none; border-radius: 8px; padding: 6px 0; }
+.workout-jump:hover { text-decoration: underline; }
+#workoutGuide,#progressionGuide { border-color: var(--line)!important; }
+#exerciseList .gb-set-grid.setrow input:not([type=checkbox]) { min-height: 44px!important; height: 44px!important; }
+.checklist-jump { display: inline-flex; align-items: center; min-height: 44px; margin-top: 12px; background: var(--accent); color: #102b21; text-decoration: none; padding: 10px 14px; border-radius: var(--radius-control); font-size: 13px; font-weight: 650; }
+#exerciseList .gb-set-grid.setrow input:not([type=checkbox]):focus { border-color: var(--accent)!important; box-shadow: 0 0 0 3px #92dec319!important; }
